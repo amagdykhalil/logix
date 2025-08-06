@@ -13,37 +13,26 @@ export default {
 
     theme: {
         extend: {
+            fontFamily:{
+                Mooli: 'Mooli'
+            },
             colors : {
 
                 primary: {
                     DEFAULT: '#2A285E', 
-                    light: '#43409314', 
-                    text : "#434093",
-                    dark: '', 
-                    hover: '#3C397C', 
+                    soft: '#84B156',
+                    softDark: '#6E9A45',
+                    dark: '#012839',
+                    darkLigher: '#336680',
+                    grayWhite: '#ffffffd0'
                 },
 
                 bg : {
                     DEFAULT : "#ffffff",
-                    soft : "#f5f6f6",
-                    muted : "#f8f8f8",
                 },
 
                 border : {
                     DEFAULT :"#EEEEEE",
-                },
-
-                wrong : {
-                    DEFAULT : "#E9A760",
-                    light : "#E6B9321A"
-                },
-                error : {
-                    DEFAULT : "#FF6969",
-                    light : "#CF42421A",
-                },
-                success : {
-                    DEFAULT : "#43AF63",
-                    light : "#43AF631A",
                 },
             }
         },

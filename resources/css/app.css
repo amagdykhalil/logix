@@ -1,5 +1,60 @@
-@import url("https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&family=Inter:wght@400;600;700&display=swap");
-@import url("https://fonts.googleapis.com/css?family=Alexandria:100,200,300,regular,500,600,700,800,900");
+/* === Load Montserrat-Arabic Font with Multiple Weights === */
+@import url('https://fonts.googleapis.com/css2?family=Mooli&display=swap');
+@font-face {
+    font-family: 'Montserrat-Arabic';
+    src: url('/public/fonts/Montserrat-Arabic/Montserrat-Arabic Thin/Montserrat-Arabic Thin.ttf');
+    font-weight: 100;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: 'Montserrat-Arabic';
+    src: url('/public/fonts/Montserrat-Arabic/Montserrat-Arabic ExtraLight/Montserrat-Arabic ExtraLight.ttf');
+    font-weight: 200;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: 'Montserrat-Arabic';
+    src: url('/public/fonts/Montserrat-Arabic/Montserrat-Arabic Light/Montserrat-Arabic Light.ttf');
+    font-weight: 300;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: 'Montserrat-Arabic';
+    src: url('/public/fonts/Montserrat-Arabic/Montserrat-Arabic Regular/Montserrat-Arabic Regular.ttf');
+    font-weight: 400;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: 'Montserrat-Arabic';
+    src: url('/public/fonts/Montserrat-Arabic/Montserrat-Arabic Medium/Montserrat-Arabic Medium.ttf');
+    font-weight: 500;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: 'Montserrat-Arabic';
+    src: url('/public/fonts/Montserrat-Arabic/Montserrat-Arabic SemiBold/Montserrat-Arabic SemiBold.ttf');
+    font-weight: 600;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: 'Montserrat-Arabic';
+    src: url('/public/fonts/Montserrat-Arabic/Montserrat-Arabic Bold/Montserrat-Arabic Bold.ttf');
+    font-weight: 700;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: 'Montserrat-Arabic';
+    src: url('/public/fonts/Montserrat-Arabic/Montserrat-Arabic ExtraBold/Montserrat-Arabic ExtraBold.ttf');
+    font-weight: 800;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: 'Montserrat-Arabic';
+    src: url('/public/fonts/Montserrat-Arabic/Montserrat-Arabic Black/Montserrat-Arabic Black.ttf');
+    font-weight: 900;
+    font-style: normal;
+  } 
+
 /* قاعدة Tailwind */
 @tailwind base;
 @tailwind components;
@@ -7,426 +62,8 @@
 
 /* إعداد خطوط اللغة */
 :root {
-    --font-arabic: "Alexandria", sans-serif;
-    --font-english: "Inter", sans-serif;
+    --font: "Montserrat-Arabic";
 }
-
-[dir="rtl"] body {
-    font-family: var(--font-arabic) !important;
-    direction: rtl;
-}
-
-[dir="ltr"] body {
-    font-family: var(--font-english);
-    direction: ltr;
-}
-
-.toggle-switch {
-    width: 3rem;
-    height: 1.5rem;
-    appearance: none;
-    background-color: #cbd5e1;
-    border-radius: 9999px;
-    position: relative;
-    outline: none;
-    cursor: pointer;
-    transition: background 0.3s ease;
-}
-.toggle-switch:checked {
-    background-color: #6366f1;
-}
-.toggle-switch::before {
-    content: "";
-    position: absolute;
-    top: 0.125rem;
-    left: 0.25rem;
-    width: 1.25rem;
-    height: 1.25rem;
-    background: white;
-    border-radius: 9999px;
-    transition: transform 0.3s ease;
-}
-.toggle-switch:checked::before {
-    transform: translateX(1.5rem);
-}
-
-html {
-    margin: 0 !important;
-}
-
-.card {
-    @apply rounded-lg shadow-inner border border-border bg-white p-4 dark:bg-gray-800 dark:border-gray-700 transition-colors duration-200;
-}
-
-/*  datatable */
-
-/* Hide default sorting arrows */
-table.dataTable thead th.sorting::before,
-table.dataTable thead th.sorting::after,
-table.dataTable thead th.sorting_asc::before,
-table.dataTable thead th.sorting_asc::after,
-table.dataTable thead th.sorting_desc::before,
-table.dataTable thead th.sorting_desc::after {
-    display: none !important;
-    content: none !important;
-}
-
-[dir="rtl"] select {
-    background-position: left 0.5rem center !important;
-}
-
-select,
-input {
-    outline: none !important;
-    border: 1px solid #eee !important;
-    box-shadow: none !important;
-}
-
-/* Select */
-.select-group {
-    @apply mb-5 space-y-2;
-}
-
-.select-label {
-    @apply block text-xs font-medium text-gray-700 mb-1.5 dark:text-gray-300 dark:opacity-90;
-}
-
-.select-select {
-    @apply cursor-pointer w-full bg-gray-50 hover:bg-gray-100 border dark:!border-gray-600 dark:!bg-gray-900/50 border-gray-300 text-sm rounded-lg p-2.5 text-gray-900 outline-none transition-all duration-200
-         focus:border-indigo-500 focus:ring-2 focus:ring-indigo-100
-         dark:bg-gray-800 dark:text-gray-100   dark:hover:bg-gray-700 dark:focus:border-indigo-400 dark:focus:ring-indigo-900/30
-         hover:border-gray-400 dark:hover:border-gray-600
-         placeholder-gray-400 dark:placeholder-gray-500;
-}
-
-/* Input */
-.input-group {
-    @apply mb-5 space-y-2;
-}
-
-
-.input-label {
-    @apply block text-xs font-medium text-gray-700 mb-1.5 dark:text-gray-300 dark:opacity-90;
-}
-
-.input-field {
-    @apply w-full bg-gray-50 hover:bg-gray-100 border border-gray-300 dark:!border-gray-600 dark:!bg-gray-900/50 text-sm rounded-lg p-2.5 text-gray-900 outline-none transition-all duration-200 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-100 dark:text-gray-100   dark:hover:bg-gray-700 dark:focus:border-indigo-400 dark:focus:ring-indigo-900/30 hover:border-gray-400 dark:hover:border-gray-600 placeholder-gray-400 dark:placeholder-gray-500;
-}
-
-input[type='password']  {
-    @apply rtl:!pl-[40px] ltr:!pr-[40px]
-}
-
-/* DataTable Styles */
-.custom-table .dataTables_paginate.paging_full_numbers {
-    display: none !important;
-}
-.dataTables_paginate.paging_full_numbers span {
-    display: flex !important;
-    /* direction: ltr; */
-    flex-direction: row-reverse !important;
-    gap: 10px;
-}
-.dataTables_paginate.paging_full_numbers a {
-    height: 35px !important;
-    width: 35px !important;
-    margin: 0 !important;
-    border-radius: 14px !important;
-}
-
-.dataTables_wrapper .dt-buttons {
-    display: none !important;
-}
-
-#custom-pagination-wrapper{
-  direction: rtl;
-}
-.dataTables_paginate {
-  flex-direction: row-reverse;
-    margin-top: 10px !important;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 0.5rem;
-}
-
-.dataTables_info {
-    display: none !important;
-}
-
-.pagination {
-    display: flex;
-    flex-direction: row-reverse;
-}
-
-@layer components {
-    .paginate_button {
-        @apply flex items-center justify-center 
-           px-3.5 py-2 bg-gray-100 font-semibold 
-           transition-all duration-300 ease-in-out 
-           shadow-sm cursor-pointer
-           /* Dark mode */
-           dark:bg-gray-700 dark:text-gray-200;
-
-        /* Pretty hover effect */
-        &:hover:not(.current):not(.active) {
-            @apply bg-gray-200 text-gray-900
-             dark:bg-gray-600 dark:text-white;
-            transform: translateY(-1px);
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
-                0 2px 4px -1px rgba(0, 0, 0, 0.06);
-        }
-
-        /* Current page state */
-        &.current {
-            @apply bg-indigo-700 text-white
-             dark:bg-indigo-600 dark:text-white;
-            box-shadow: 0 4px 6px -1px rgba(59, 130, 246, 0.3),
-                0 2px 4px -1px rgba(59, 130, 246, 0.2);
-        }
-
-        /* Active state */
-        &.page-item.active {
-            @apply bg-indigo-900 text-white
-             dark:bg-indigo-800 dark:text-white;
-            box-shadow: 0 4px 6px -1px rgba(30, 58, 138, 0.3),
-                0 2px 4px -1px rgba(30, 58, 138, 0.2);
-        }
-
-        /* Disabled state */
-        &:disabled {
-            @apply opacity-50 cursor-not-allowed;
-        }
-    }
-}
-/* Magnific Popup Styles */
-.mfp-no-margins img.mfp-img {
-    padding: 0;
-    width: 100%;
-    max-width: 700px !important;
-}
-
-.mfp-image-holder .mfp-content {
-    max-width: 700px;
-    width: 100%;
-}
-
-.mfp-no-margins .mfp-figure:after {
-    top: 0;
-    bottom: 0;
-}
-
-.mfp-no-margins .mfp-container {
-    padding: 0;
-}
-
-.mfp-with-zoom .mfp-container,
-.mfp-with-zoom.mfp-bg {
-    opacity: 0;
-    transition: all 0.3s ease-out;
-}
-
-.mfp-with-zoom.mfp-ready .mfp-container {
-    opacity: 1;
-}
-
-.mfp-with-zoom.mfp-ready.mfp-bg {
-    opacity: 0.8;
-}
-
-.mfp-with-zoom.mfp-removing .mfp-container,
-.mfp-with-zoom.mfp-removing.mfp-bg {
-    opacity: 0;
-}
-
-/* Scrollbar Styles */
-.overflow-x-auto::-webkit-scrollbar {
-    height: 6px;
-}
-
-.overflow-x-auto::-webkit-scrollbar-track {
-    background: #f1f1f1;
-    border-radius: 3px;
-}
-
-.overflow-x-auto::-webkit-scrollbar-thumb {
-    background: #c1c1c1;
-    border-radius: 3px;
-}
-
-.dark .overflow-x-auto::-webkit-scrollbar-track {
-    background: #2d3748;
-}
-
-.dark .overflow-x-auto::-webkit-scrollbar-thumb {
-    background: #4a5568;
-}
-
-.btn {
-  @apply bg-[#434093] w-full min-h-[45px] rounded-[8px] p-[14px] text-center text-white text-base transition duration-300 ease-in-out hover:bg-[#5c5ab2] dark:bg-[#2c2a6d] dark:hover:bg-[#403e8f];
-}
-
-.btn-white {
-  @apply w-full min-h-[45px] duration-300 rounded-[8px] p-[14px] text-center text-base transition ease-in-out;
-
-  background-color: #A3A3B11A;
-  @apply text-gray-800;
-  @apply hover:bg-[#b5b5c15a] hover:text-gray-900;
-  @apply dark:bg-[#2c2c3c2a] dark:text-gray-100 dark:hover:bg-[#3c3c4c2a];
-}
-
-
-
-/* Action Buttons */
-.action-buttons {
-    display: flex;
-    gap: 8px;
-    justify-content: center;
-}
-
-.action-btn {
-    width: 30px;
-    height: 30px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
-
-.action-btn:hover {
-    transform: scale(1.1);
-}
-
-/* Voice Player Styles */
-.voice-player audio {
-    width: 100%;
-}
-
-.child-row {
-    background-color: #f9fafb !important;
-}
-
-.voice-player-container {
-    padding: 12px;
-    background: #f9fafb;
-    border-radius: 0 0 8px 8px;
-}
-
-.custom-audio-player {
-    width: 100%;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-
-.custom-audio-player audio {
-    flex-grow: 1;
-}
-
-.custom-audio-player audio::-webkit-media-controls-panel {
-    background-color: #f9fafb;
-    border-radius: 4px;
-}
-
-.custom-audio-player audio::-webkit-media-controls-play-button,
-.custom-audio-player audio::-webkit-media-controls-mute-button {
-    filter: invert(0.3);
-}
-
-.custom-audio-player audio::-webkit-media-controls-current-time-display,
-.custom-audio-player audio::-webkit-media-controls-time-remaining-display {
-    font-size: 0.8em;
-}
-
-/* Dark Mode Styles */
-.dark .voice-player-container {
-    background: #1f2937;
-}
-
-.dark .custom-audio-player audio::-webkit-media-controls-panel {
-    background-color: #1f2937;
-    filter: invert(1) hue-rotate(180deg);
-}
-
-.dark .child-row {
-    background-color: #1f2937 !important;
-}
-
-.dark .custom-table {
-    background-color: #1f2937;
-    color: #f3f4f6;
-}
-
-.dark .custom-table thead {
-    background-color: #1f2937;
-    color: #f3f4f6;
-}
-
-.dark .custom-table tbody tr:nth-child(even) {
-    background-color: #1f2937 !important;
-}
-
-.dark .custom-table tbody tr:nth-child(odd) {
-    background-color: #111827 !important;
-}
-
-/* Error Message */
-.audio-error {
-    color: #ef4444;
-    font-size: 0.875rem;
-    margin-top: 8px;
-    display: none;
-}
-
-/* Play Button States */
-.fa-play,
-.fa-stop {
-    transition: all 0.2s ease;
-}
-
-/*  tabs  */
-
-[data-tab-content] {
-    display: none;
-}
-
-.tab-active {
-    @apply text-[#434093] dark:text-indigo-400 border-b-2 border-[#434093] dark:border-indigo-400;
-}
-
-.tab-inactive {
-    @apply text-[#81899B] dark:text-gray-400;
-}
-
-.tab-content-active {
-    display: block;
-}
-
-.count {
-    @apply bg-gray-200 dark:bg-gray-600 text-black dark:text-white text-xs rounded-full px-2;
-}
-
-
-
-[type="checkbox"] + div::before {
-        content: "";
-        position: absolute;
-        width: 0.4rem;
-        height: 0.75rem;
-        border: solid white;
-        border-width: 0 2px 2px 0;
-        transform: rotate(45deg) scale(0);
-        opacity: 0;
-        transition: all 0.2s ease;
-    }
-
-    /* Show checkmark when checked */
-    [type="checkbox"]:checked + div::before {
-        opacity: 1;
-        transform: rotate(45deg) scale(1);
-    }
 
 
 .container {
@@ -442,5 +79,9 @@ html{
     scroll-behavior: smooth;
 }
 
-/* infinite animation  */
+body {
+    font-family: var(--font);
+    color: #ffffff;
+    text-align: right;
+}
 

@@ -1,0 +1,1 @@
+Copy this fomr components/tab-all.blade on depend you data 

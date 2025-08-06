@@ -1,0 +1,77 @@
+[
+  {
+    "id": 5,
+    "isCheck": false,
+    "answers": {
+      "department": "IT",
+      "satisfaction": "Satisfied",
+      "employeeFullName": "asdasdf"
+    },
+    "created_at": "2025-07-08T05:05:59.831Z",
+    "user": {
+      "id": 7,
+      "name": "nour",
+      "email": "nour@gmail.com",
+      "password": "$argon2id$v=19$m=65536,t=3,p=4$PBtzYUIRuNO3Hk1ktDc8Aw$sDpnspNq+JDjkgYWJs+sZ5bL+J3Ynxnz48Nc96SoyHY",
+      "role": "user",
+      "created_at": "2025-07-08T05:01:45.281Z",
+      "updated_at": "2025-07-08T05:01:45.281Z"
+    }
+  },
+  {
+    "id": 4,
+    "isCheck": true,
+    "answers": {
+      "question1": "updated answer",
+      "question2": "another update"
+    },
+    "created_at": "2025-07-07T22:11:33.750Z",
+    "user": {
+      "id": 6,
+      "name": "ahmed 91",
+      "email": "ahmed919@gmail.com",
+      "password": "$argon2id$v=19$m=65536,t=3,p=4$pZIo5oAHcj+Ynxg6ykiodQ$3vZ9hpHiDXwCm72L+5xtG8l8EpXMUMTBNv/TTblGgok",
+      "role": "admin",
+      "created_at": "2025-07-07T22:01:57.303Z",
+      "updated_at": "2025-07-08T05:31:28.183Z"
+    }
+  },
+  {
+    "id": 3,
+    "isCheck": false,
+    "answers": {
+      "age": "29",
+      "city": "New York",
+      "name": "John Doe",
+      "email": "john.doe@example.com",
+      "phone": "+123456789",
+      "gender": "Male",
+      "rating": "5",
+      "country": "USA",
+      "comments": "Looking forward to more features.",
+      "feedback": "Great service and user-friendly platform.",
+      "interests": [
+        "Technology",
+        "Fitness",
+        "Travel"
+      ],
+      "subscribe": "Yes",
+      "experience": "5 years",
+      "occupation": "Software Engineer",
+      "satisfaction": "Very satisfied",
+      "recommendation": "Absolutely",
+      "preferred_contact": "Email",
+      "newsletter_frequency": "Weekly"
+    },
+    "created_at": "2025-07-07T21:36:17.378Z",
+    "user": {
+      "id": 1,
+      "name": "Admin",
+      "email": "admin@gmail.com",
+      "password": "$argon2id$v=19$m=65536,t=3,p=4$Wv+aYtNXJE19UXBNP55vrA$YSY5xr7vAxY/KXvjJlULKRkNio1YQLBcZ4wNA30FDvM",
+      "role": "admin",
+      "created_at": "2025-07-07T12:50:51.016Z",
+      "updated_at": "2025-07-07T12:50:51.016Z"
+    }
+  }
+]
