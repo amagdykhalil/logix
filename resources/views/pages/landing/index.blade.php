@@ -241,7 +241,7 @@
                     </nav>
 
                     <!-- Login Button - Third on mobile, first on desktop -->
-                    <a href='login'
+                    <a href="{{ url('/login') }}"
                         class='hover:bg-primary-softDark transition-colors  w-[140px] lg:w-[156px] h-[50px] lg:h-[55px] rounded-[8px] bg-primary-soft py-[5px] px-[15px] flex items-center gap-[10px] outline-none order-3 lg:order-1'>
                         <img src="./assets/icons/login.png" alt="login" class="w-4 h-4 lg:w-5 lg:h-5 ">
                         <span class='font-[400] text-sm lg:text-base leading-[100%] tracking-[0] text-white '>
@@ -276,7 +276,7 @@
 
                     <!-- Action Buttons -->
                     <div class='flex flex-col sm:flex-row gap-4 ml-auto justify-center sm:justify-end mt-8 lg:mt-0'>
-                        <a href='#start'
+                        <a <a href="{{ url('/signup') }}"
                             class='hover:bg-gray-200 transition-colors  w-full sm:w-[170px] h-[50px] lg:h-[55px] rounded-[8px] bg-white py-[5px] px-[15px] flex items-center justify-center gap-[10px] outline-none'>
                             <img src="./assets/icons/send-2.svg" alt="send-2"
                                 class="w-4 h-4 lg:w-5 lg:h-5 text-primary-dark">
