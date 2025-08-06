@@ -14,7 +14,7 @@ export default {
     theme: {
         extend: {
             fontFamily:{
-                Mooli: 'Mooli'
+                MontserratArabic: 'Montserrat-Arabic'
             },
             colors : {
 

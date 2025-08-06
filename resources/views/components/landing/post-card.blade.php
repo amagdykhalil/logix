@@ -11,12 +11,11 @@
     <div class="relative w-full sm:w-[345px]">
         <div class="flex justify-between items-center
                 mb-4 sm:mb-[22px]">
-            <svg xmlns="http://www.w3.org/2000/svg" width="9" height="37" viewBox="0 0 9 37" fill="none"
-                class="flex-shrink-0">
-                <circle cx="4.33334" cy="18.5" r="4" fill="#C4C4C4" />
-                <circle cx="4.33334" cy="32.5" r="4" fill="#C4C4C4" />
-                <circle cx="4.33334" cy="4.5" r="4" fill="#C4C4C4" />
-            </svg>
+            <button class='flex flex-col gap-[5px]'>
+                <div class='w-3 h-3 rounded-full bg-gray-300'></div>
+                <div class='w-3 h-3 rounded-full bg-gray-300'></div>
+                <div class='w-3 h-3 rounded-full bg-gray-300'></div>
+            </button>
 
             <div class="flex justify-end items-center">
                 <p
@@ -48,7 +47,7 @@
             class="flex items-center
                 space-x-1 sm:space-x-2
                 rtl:space-x-reverse
-                w-1/2 sm:w-20">
+                sm:w-20">
             <svg xmlns="http://www.w3.org/2000/svg" width="10" height="14" viewBox="0 0 10 14" fill="none">
                 <path
                     d="M0.583313 3.39167C0.583313 2.59833 0.583313 2.20167 0.73773 1.8985C0.873548 1.63195 1.09026 1.41524 1.35681 1.27942C1.65998 1.125 2.05665 1.125 2.84998 1.125H6.81665C7.60998 1.125 8.00665 1.125 8.30981 1.27942C8.57636 1.41524 8.79308 1.63195 8.9289 1.8985C9.08331 2.20167 9.08331 2.59833 9.08331 3.39167V12.816C9.08331 13.1603 9.08331 13.3324 9.01177 13.4266C8.98086 13.4676 8.94141 13.5014 8.89615 13.5256C8.8509 13.5498 8.80093 13.5639 8.74969 13.5669C8.6314 13.574 8.48831 13.4783 8.20215 13.2878L4.83331 11.0417L1.46448 13.2871C1.17831 13.4783 1.03523 13.574 0.916229 13.5669C0.865113 13.5638 0.815276 13.5496 0.770152 13.5254C0.725028 13.5012 0.685692 13.4675 0.654855 13.4266C0.583313 13.3324 0.583313 13.1603 0.583313 12.816V3.39167Z"

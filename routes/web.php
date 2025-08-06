@@ -21,6 +21,7 @@ Route::middleware(['web', \App\Http\Middleware\SetLocale::class])->group(functio
     Route::get('/signup', function () {
         return view('pages.auth.signup');
     })->name('signup');
+
 });
 
 

@@ -14,7 +14,7 @@
   }
   @font-face {
     font-family: 'Montserrat-Arabic';
-    src: url('/public/fonts/Montserrat-Arabic/Montserrat-Arabic Light/Montserrat-Arabic Light.ttf');
+    src: url('/public/fonts/Montserrat-Arabic/Montserrat-Arabic Regular/Montserrat-Arabic Regular.ttf');
     font-weight: 300;
     font-style: normal;
   }
@@ -85,3 +85,14 @@ body {
     text-align: right;
 }
 
+.flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+button:disabled {
+  opacity: 0.5;
+  pointer-events: none;
+  cursor: not-allowed;
+}

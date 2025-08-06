@@ -88,40 +88,168 @@
         'Simplification-7.svg',
     ];
 
-    $menuItems = [
-        ['label' => 'الأسئلة العامة', 'disabled' => false],
-        ['label' => 'إستلام الشحنات', 'disabled' => true],
-        ['label' => 'إدارة التخزين والمخزون', 'disabled' => true],
-        ['label' => 'إدارة الطلبات', 'disabled' => true],
-        ['label' => 'فحص المنتجات', 'disabled' => true],
-        ['label' => 'الشحن والتوصيل', 'disabled' => true],
-    ];
+    $faqCategories = [
+        'general' => [
+            'id' => 'general',
+            'title' => 'الأسئلة العامة',
+            'questions' => [
+                [
+                    'number' => '01',
+                    'question' => 'ما هي الخدمات التي تقدمها منصة Logistics؟',
+                    'answer' =>
+                        'توفر المنصة خدمات التخزين، والشحن، والتتبع، وإدارة المخزون، ودعم العملاء على مدار الساعة.',
+                ],
+                [
+                    'number' => '02',
+                    'question' => 'كيف يمكنني إنشاء حساب جديد على المنصة؟',
+                    'answer' =>
+                        'اضغط على زر “إنشاء حساب” في الصفحة الرئيسية، ثم قم بإدخال بياناتك الأساسية وتأكيد بريدك الإلكتروني للبدء.',
+                ],
+                [
+                    'number' => '03',
+                    'question' => 'هل تدعم المنصة اللغة العربية فقط أم لغات أخرى؟',
+                    'answer' => 'المنصة متاحة حالياً باللغتين العربية والإنجليزية، وسيتم إضافة لغات إضافية قريباً.',
+                ],
+                [
+                    'number' => '04',
+                    'question' => 'ما هي طرق الدفع المتاحة؟',
+                    'answer' =>
+                        'يمكنك الدفع ببطاقات الائتمان (Visa, MasterCard) أو تحويل بنكي أو عبر خدمة Apple/Google Pay.',
+                ],
+            ],
+        ],
 
-    $faqs = [
-        [
-            'number' => '01',
-            'question' => 'هل يوجد رسوم مقابل استخدام منصة Logistics؟',
-            'answer' =>
-                'نعم، نقدم خطط تسعير مرنة ومناسبة لحجم أعمالك، ويمكنك اختيار الباقة الأنسب عند التسجيل بكل سهولة.',
-            'isOpen' => true,
+        'receiving' => [
+            'id' => 'receiving',
+            'title' => 'إستلام الشحنات',
+            'questions' => [
+                [
+                    'number' => '01',
+                    'question' => 'كيف يمكنني جدولة استلام الشحنة من المخزن؟',
+                    'answer' =>
+                        'يمكنك جدولة الاستلام عبر لوحة التحكم في قسم “إدارة الشحنات” باختيار التاريخ والوقت المناسبين.',
+                ],
+                [
+                    'number' => '02',
+                    'question' => 'ما هي المستندات المطلوبة عند الاستلام؟',
+                    'answer' => 'يُطلب منك إظهار رقم الطلب وبطاقة الهوية أو رخصة العمل لتوثيق عملية الاستلام.',
+                ],
+                [
+                    'number' => '03',
+                    'question' => 'ماذا أفعل إذا كانت الشحنة تالفة عند الاستلام؟',
+                    'answer' => 'قم بتوثيق الأضرار بالصورة واتصل فوراً بفريق الدعم لتقديم بلاغ فتح تحقيق.',
+                ],
+            ],
         ],
-        [
-            'number' => '02',
-            'question' => 'هل يمكن ربط متجري الإلكتروني بالمنصة؟',
-            'answer' => '',
-            'isOpen' => false,
+
+        'storage' => [
+            'id' => 'storage',
+            'title' => 'إدارة التخزين والمخزون',
+            'questions' => [
+                [
+                    'number' => '01',
+                    'question' => 'كيف أتحقق من مستوى المخزون المتبقي؟',
+                    'answer' =>
+                        'يمكنك رؤية المخزون المتاح في قسم “المخزون” على لوحة التحكم، حيث يظهر الكمية الحالية وتنبيهات النقص.',
+                ],
+                [
+                    'number' => '02',
+                    'question' => 'هل يمكنني تخصيص أماكن تخزين معينة لبضائعي؟',
+                    'answer' =>
+                        'نعم، المنصة تتيح إنشاء مواقع تخزين افتراضية وتخصيصها حسب فئة المنتج أو تاريخ الانتهاء.',
+                ],
+                [
+                    'number' => '03',
+                    'question' => 'كيف يمكنني استيراد بيانات المخزون من ملف CSV؟',
+                    'answer' =>
+                        'اذهب إلى “استيراد/تصدير” ثم اختر ملف CSV من جهازك وتأكد من تطابق الأعمدة قبل الاستيراد.',
+                ],
+                [
+                    'number' => '04',
+                    'question' => 'هل يوجد حد أقصى لحجم التخزين؟',
+                    'answer' =>
+                        'لا يوجد حد افتراضي، ويمكنك زيادة السعة التخزينية حسب الباقة المختارة أو بإضافة سعة إضافية.',
+                ],
+            ],
         ],
-        [
-            'number' => '03',
-            'question' => 'كيف أتابع حالة الطلبات والشحنات؟',
-            'answer' => '',
-            'isOpen' => false,
+
+        'orders' => [
+            'id' => 'orders',
+            'title' => 'إدارة الطلبات',
+            'questions' => [
+                [
+                    'number' => '01',
+                    'question' => 'كيف يمكنني إنشاء طلب شحن جديد؟',
+                    'answer' =>
+                        'من لوحة التحكم اختر “طلب جديد”، ثم أدخل بيانات المرسل والمستلم وقم بتأكيد تفاصيل الشحنة.',
+                ],
+                [
+                    'number' => '02',
+                    'question' => 'هل يمكن تعديل طلب قيد المعالجة؟',
+                    'answer' => 'يمكنك تعديل البيانات قبل مرور 24 ساعة من جدولة الشحن عبر صفحة الطلبات الخاصة بك.',
+                ],
+                [
+                    'number' => '03',
+                    'question' => 'كيف ألغى طلباً وأسترد المبلغ المدفوع؟',
+                    'answer' =>
+                        'انتقل إلى الطلب، واضغط على “إلغاء الطلب”، وسيتم استرداد المدفوعات وفقاً لسياسة الاسترداد.',
+                ],
+            ],
         ],
-        [
-            'number' => '04',
-            'question' => 'كيف أتواصل مع فريق الدعم؟',
-            'answer' => '',
-            'isOpen' => false,
+
+        'inspection' => [
+            'id' => 'inspection',
+            'title' => 'فحص المنتجات',
+            'questions' => [
+                [
+                    'number' => '01',
+                    'question' => 'ما هي عملية فحص الجودة للبضائع؟',
+                    'answer' =>
+                        'نقوم بفحص البضائع حسب المعايير المتفق عليها (حالة التغليف، الكمية، الصلاحية) قبل التخزين.',
+                ],
+                [
+                    'number' => '02',
+                    'question' => 'كم يستغرق الفحص عادةً؟',
+                    'answer' => 'عادةً ما يتم إتمام الفحص خلال 1–2 يوم عمل بعد وصول الشحنة إلى المستودع.',
+                ],
+                [
+                    'number' => '03',
+                    'question' => 'هل يمكنني طلب فحص إضافي بعد التخزين؟',
+                    'answer' => 'نعم، يمكنك طلب فحص لاحق عبر خيار “طلبات الفحص” مع تحديد نوع الفحص المطلوب.',
+                ],
+                [
+                    'number' => '04',
+                    'question' => 'ما هي تكاليف خدمة الفحص؟',
+                    'answer' => 'تختلف التكاليف حسب نوع الفحص والكمية، وتظهر بوضوح في صفحة “الفوترة” قبل التأكيد.',
+                ],
+            ],
+        ],
+
+        'shipping' => [
+            'id' => 'shipping',
+            'title' => 'الشحن والتوصيل',
+            'questions' => [
+                [
+                    'number' => '01',
+                    'question' => 'ما هي شركات الشحن التي تعمل معها المنصة؟',
+                    'answer' => 'نتعاون مع أبرز شركات الشحن المحلية والدولية مثل أرامكس وفيديكس وDHL.',
+                ],
+                [
+                    'number' => '02',
+                    'question' => 'كيف أتابع حالة التوصيل؟',
+                    'answer' => 'يمكنك متابعة رقم التتبع في لوحة “حالة الشحنات” أو عبر الإشعارات الآلية في التطبيق.',
+                ],
+                [
+                    'number' => '03',
+                    'question' => 'ما هو الوقت المتوقع لوصول الشحنة داخل البلاد؟',
+                    'answer' => 'عادةً تصل الشحنات خلال 1–3 أيام عمل داخل نفس الدولة، وخلال 5–7 أيام للشحن الدولي.',
+                ],
+                [
+                    'number' => '04',
+                    'question' => 'هل يمكنني تعديل عنوان التوصيل بعد الشحن؟',
+                    'answer' => 'يمكن تعديل العنوان ضمن أول 2 ساعة من إعداد الشحنة عن طريق التواصل مع الدعم مباشرةً.',
+                ],
+            ],
         ],
     ];
 
@@ -170,7 +298,6 @@
             font-family: Montserrat-Arabic;
             font-weight: 500;
             font-style: Medium;
-            font-size: 16px;
             leading-trim: NONE;
             line-height: 150%;
             letter-spacing: 0%;
@@ -179,13 +306,82 @@
             angle: 0 deg;
             opacity: 1;
             color: white;
+            position: relative;
 
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: #84B156;
+            transition: width 0.3s ease, left 0.3s ease;
+        }
+
+        /* Mobile Menu Styles */
+        .mobile-menu {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.0s ease-out;
+        }
+
+        .mobile-menu.open {
+            max-height: 500px;
+        }
+
+        .hamburger {
+            transition: all 0.3s ease;
+        }
+
+        .hamburger.open span {
+            transition: all 0.3s ease;
+            transform-origin: center;
+        }
+
+        .hamburger.open span:first-child {
+            transform: rotate(45deg) translateY(8px) translateX(3px)
+        }
+
+        .hamburger.open span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .hamburger.open span:last-child {
+            transform: rotate(-45deg) translateY(-11px) translateX(3px)
+        }
+
+
+
+        .mobile-nav-link:hover,
+        .nav-link:hover {
+            color: #84b156;
+        }
+
+        .nav-link.active::after {
+            width: 100%;
+        }
+
+        .mobile-nav-link.active,
+        .nav-link.active {
+            color: #84B156;
+            font-weight: 500;
         }
 
         @media (min-width: 810px) {
             .custom-transform {
                 transform: translateY(4rem);
             }
+        }
+
+        .group-image {
+            background-image: url('./assets/landing/group.png');
+            background-repeat: no-repeat;
+            background-position: right bottom;
+            background-size: auto;
+            /* or use contain / cover / 200px auto as needed */
         }
 
         footer {
@@ -217,42 +413,82 @@
             style="background: linear-gradient(187.79deg, #141E29 -0.35%, rgba(32, 32, 32, 0) 93.71%);">
         </div>
 
-        <div class='relative z-10 min-h-screen flex flex-col gap-4'>
+        <div class='container  relative z-10 min-h-[970px] flex flex-col gap-4'>
             <div class='flex flex-col gap-8 lg:gap-[66px]'>
                 <!-- Header Navigation -->
-                <div
-                    class='h-auto lg:h-[119px] py-[6px] px-4 sm:px-8 lg:px-[100px] flex flex-col lg:flex-row justify-between items-center gap-4 lg:gap-0'>
-                    <!-- Logo - First on mobile, last on desktop -->
-                    <div class='order-1 lg:order-3'>
+                <header id='header'
+                    class=" w-full fixed z-50 pt-3 pb-3 left-1/2 -translate-x-1/2 max-w-full lg:max-w-[1440px]">
+                    <div class="w-full px-6 flex flex-row-reverse md:flex-row justify-between items-center gap-4 lg:gap-0">
+                        <!-- Logo - First on mobile, last on desktop -->
+
+                        <!-- Login Button - Third on mobile, first on desktop -->
+                        <a href="{{ url('/login') }}"
+                            class='hover:bg-primary-softDark transition-colors  w-[140px] lg:w-[156px] h-[50px] lg:h-[55px] rounded-[8px] bg-primary-soft py-[5px] px-[15px] hidden md:flex  items-center gap-[10px] outline-none'>
+                            <img src="./assets/icons/login.png" alt="login" class="w-4 h-4 lg:w-5 lg:h-5 ">
+                            <span class='font-[400] text-sm lg:text-base leading-[100%] tracking-[0] text-white '>
+                                تسجيل دخول
+                            </span>
+                        </a>
+                        <!-- Navigation - Second on mobile, second on desktop -->
+                        <nav id='buttons-container'
+                            class="nav w-full sm:w-auto lg:w-[559px] h-auto lg:h-[64px] hidden md:flex  flex-wrap sm:flex-nowrap items-center justify-center gap-4 lg:gap-[30px] opacity-100 rounded-[15px] pt-[16px] pr-[15px] lg:pr-[25px] pb-[15px] pl-[15px] lg:pl-[25px] border border-solid text-[#FCFCFC24]">
+                            <a href="#contact" class='nav-link text-[14px] lg:text-base cursor-pointer'>تواصل
+                                معانا</a>
+                            <a href="#questions" class='nav-link text-[14px] lg:text-base cursor-pointer'>الاسئلة
+                                الشائعة</a>
+                            <a href="#services" class='nav-link text-[14px] lg:text-base cursor-pointer'>الخدمات</a>
+                            <a href="#about" class='nav-link text-[14px] lg:text-base cursor-pointer'>من
+                                نحن</a>
+                            <a href="#home" class='nav-link active cursor-pointer text-[14px] lg:text-base'>الرئيسية</a>
+                        </nav>
+
                         <img src='./assets/logo.png' class='w-[70px] h-[40px] lg:w-[89px] lg:h-[51px]' />
+
+
+                        <button class="p-2  flex md:hidden" id="mobile-menu-button">
+                            <div class="hamburger w-6 flex flex-col justify-between h-5">
+                                <span class="block w-full h-0.5 bg-gray-300 rounded"></span>
+                                <span class="block w-full h-0.5 bg-gray-300 rounded"></span>
+                                <span class="block w-full h-0.5 bg-gray-300 rounded"></span>
+                            </div>
+                        </button>
+
+                        <!-- Mobile Menu -->
+                        <div class="mobile-menu w-full absolute left-0 top-full bg-white shadow-lg" id="mobile-menu">
+                            <ul class="flex flex-col text-gray-600 font-medium text-sm rtl">
+                                <li class="nav-item border-b border-gray-100">
+                                    <a href="#home"
+                                        class="mobile-nav-link block py-4 px-6 text-primary-dark active">الرئيسية</a>
+                                </li>
+                                <li class="nav-item border-b border-gray-100">
+                                    <a href="#about" class="mobile-nav-link block py-4 px-6 text-primary-dark">من نحن</a>
+                                </li>
+                                <li class="nav-item border-b border-gray-100">
+                                    <a href="#services"
+                                        class="mobile-nav-link block py-4 px-6 text-primary-dark">الخدمات</a>
+                                </li>
+                                <li class="nav-item border-b border-gray-100">
+                                    <a href="#questions" class="mobile-nav-link block py-4 px-6 text-primary-dark">الاسئلة
+                                        الشائعة</a>
+                                </li>
+                                <li class="nav-item border-b border-gray-100">
+                                    <a href="#contact" class="mobile-nav-link block py-4 px-6 text-primary-dark">تواصل
+                                        معانا</a>
+                                </li>
+                                <li class="nav-item border-b border-gray-100">
+                                    <a href="{{ route('login') }}"
+                                        class="mobile-nav-link block py-4 px-6 hover:text-[#434093]">
+                                        تسجيل دخول</a>
+                                </li>
+
+                            </ul>
+                        </div>
+
                     </div>
-
-                    <!-- Navigation - Second on mobile, second on desktop -->
-                    <nav id='buttons-container'
-                        class="nav w-full sm:w-auto lg:w-[559px] h-auto lg:h-[64px] flex flex-wrap sm:flex-nowrap items-center justify-center gap-4 lg:gap-[30px] opacity-100 rounded-[15px] pt-[8px] pr-[15px] lg:pr-[25px] pb-[8px] pl-[15px] lg:pl-[25px] border border-solid text-[#FCFCFC24] order-2">
-                        <a href="#contact" class='nav-link text-sm lg:text-base hover:underline cursor-pointer'>تواصل
-                            معانا</a>
-                        <a href="#questions" class='nav-link text-sm lg:text-base hover:underline cursor-pointer'>الاسئلة
-                            الشائعة</a>
-                        <a href="#services" class='nav-link text-sm lg:text-base hover:underline cursor-pointer'>الخدمات</a>
-                        <a href="#about" class='nav-link text-sm lg:text-base hover:underline cursor-pointer'>من نحن</a>
-                        <a href="#home"
-                            class='nav-link !text-primary-soft hover:underline cursor-pointer text-sm lg:text-base'>الرئيسية</a>
-                    </nav>
-
-                    <!-- Login Button - Third on mobile, first on desktop -->
-                    <a href='login'
-                        class='hover:bg-primary-softDark transition-colors  w-[140px] lg:w-[156px] h-[50px] lg:h-[55px] rounded-[8px] bg-primary-soft py-[5px] px-[15px] flex items-center gap-[10px] outline-none order-3 lg:order-1'>
-                        <img src="./assets/icons/login.png" alt="login" class="w-4 h-4 lg:w-5 lg:h-5 ">
-                        <span class='font-[400] text-sm lg:text-base leading-[100%] tracking-[0] text-white '>
-                            تسجيل دخول
-                        </span>
-                    </a>
-                </div>
-
+                </header>
                 <!-- Main Content -->
-                <div class='px-4 sm:px-8 lg:pr-[100px] lg:pl-[100px] opacity-100'>
-                    <div class='flex w-full max-w-[1000px] h-auto lg:h-[350px] gap-6 lg:gap-[35px] flex-col ml-auto'>
+                <div class='opacity-100 pt-[185px]'>
+                    <div class='max-w-[1000px] flex gap-6 lg:gap-[35px] flex-col ml-auto'>
                         <!-- Main Heading -->
                         <div class='relative h-auto lg:h-[120px] opacity-100 ml-auto'>
                             <img src="./assets/icons/group.svg"
@@ -272,25 +508,26 @@
                             سواء كنت صاحب متجر إلكترونية, أو مشروع صغير. نوفر لك مخازن متعددة في دول الخليج و خدمات لوجستية,
                             تساعدك تتوسع في مشروعك في دول مختلفة و تدعمك في كل خطوة نحو النجاح.
                         </p>
-                    </div>
 
-                    <!-- Action Buttons -->
-                    <div class='flex flex-col sm:flex-row gap-4 ml-auto justify-center sm:justify-end mt-8 lg:mt-0'>
-                        <a href='#start'
-                            class='hover:bg-gray-200 transition-colors  w-full sm:w-[170px] h-[50px] lg:h-[55px] rounded-[8px] bg-white py-[5px] px-[15px] flex items-center justify-center gap-[10px] outline-none'>
-                            <img src="./assets/icons/send-2.svg" alt="send-2"
-                                class="w-4 h-4 lg:w-5 lg:h-5 text-primary-dark">
-                            <p class='font-[400] text-sm lg:text-base leading-[100%] tracking-[0] text-primary-dark'>
-                                ابدأ معانا الآن
-                            </p>
-                        </a>
-                        <a href="#services"
-                            class='hover:bg-primary-softDark transition-colors w-full sm:w-[170px] h-[50px] lg:h-[55px] rounded-[8px] bg-primary-soft py-[5px] px-[15px] flex items-center justify-center gap-[10px] outline-none'>
-                            <img src="./assets/icons/note-2.svg" alt="note-2" class="w-4 h-4 lg:w-5 lg:h-5 ">
-                            <p class='font-[400] text-sm lg:text-base leading-[100%] tracking-[0] text-white '>
-                                تصفح خدماتنا
-                            </p>
-                        </a>
+
+                        <!-- Action Buttons -->
+                        <div class='flex flex-col sm:flex-row gap-4 ml-auto justify-center sm:justify-end mt-8 lg:mt-0'>
+                            <a <a href="{{ url('/signup') }}"
+                                class='hover:bg-gray-200 transition-colors  w-full sm:w-[170px] h-[50px] lg:h-[55px] rounded-[8px] bg-white py-[5px] px-[15px] flex items-center justify-center gap-[10px] outline-none'>
+                                <img src="./assets/icons/send-2.svg" alt="send-2"
+                                    class="w-4 h-4 lg:w-5 lg:h-5 text-primary-dark">
+                                <p class='font-[400] text-sm lg:text-base leading-[100%] tracking-[0] text-primary-dark'>
+                                    ابدأ معانا الآن
+                                </p>
+                            </a>
+                            <a href="#services"
+                                class='hover:bg-primary-softDark transition-colors w-full sm:w-[170px] h-[50px] lg:h-[55px] rounded-[8px] bg-primary-soft py-[5px] px-[15px] flex items-center justify-center gap-[10px] outline-none'>
+                                <img src="./assets/icons/note-2.svg" alt="note-2" class="w-4 h-4 lg:w-5 lg:h-5 ">
+                                <p class='font-[400] text-sm lg:text-base leading-[100%] tracking-[0] text-white '>
+                                    تصفح خدماتنا
+                                </p>
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -409,27 +646,28 @@
         </div>
     </section>
 
-    <section id="services" class="relative bg-gray-50 py-10 px-6 overflow-hidden" dir="rtl">
-        <div class="max-w-[1203px] mx-auto h-full flex flex-col items-center ">
+    <section id="services" class="group-image relative bg-gray-50 py-10 px-6 overflow-hidden" dir="rtl">
+        <div class="container">
+            <div class="max-w-[1203px] mx-auto h-full flex flex-col items-center ">
 
-            <x-landing.section-header>
-                <x-slot name="label">خدماتنا اللوجستية</x-slot>
-                ندير كل تفصيلة باحتراف… من التخزين
-                <span class="text-primary-soft">للشحن والتتبع.</span>
-            </x-landing.section-header>
+                <x-landing.section-header>
+                    <x-slot name="label">خدماتنا اللوجستية</x-slot>
+                    ندير كل تفصيلة باحتراف… من التخزين
+                    <span class="text-primary-soft">للشحن والتتبع.</span>
+                </x-landing.section-header>
 
-            <div class="flex justify-center items-center flex-wrap gap-6 ">
-                @foreach ($services as $service)
-                    <x-landing.service-card :title="$service['title']" :description="$service['description']" :number="$service['number']" />
-                @endforeach
+                <div class="flex justify-center items-center flex-wrap gap-6 ">
+                    @foreach ($services as $service)
+                        <x-landing.service-card :title="$service['title']" :description="$service['description']" :number="$service['number']" />
+                    @endforeach
+                </div>
+
             </div>
-
         </div>
-        <img src='./assets/landing/group.png' class='absolute right-0 bottom-0 ' />
     </section>
 
 
-    <section id='start' class="relative py-10 pb-16 px-6 overflow-hidden" dir="rtl">
+    <section id='start' class="group-image container relative py-10 pb-16 px-6 overflow-hidden" dir="rtl">
         <div class="max-w-[1203px] mx-auto h-full flex flex-col items-center ">
 
             <x-landing.section-header>
@@ -467,11 +705,10 @@
             </div>
 
         </div>
-        <img src='./assets/landing/group.png' class='absolute right-0 bottom-0 ' />
     </section>
 
 
-    <section id='locations' class="relative py-10 pb-16 px-6 overflow-hidden" dir="rtl">
+    <section id='locations' class="container relative py-10 pb-16 px-6 overflow-hidden" dir="rtl">
 
         <x-landing.section-header>
             <x-slot name="label">أماكن تواجدنا</x-slot>
@@ -485,39 +722,43 @@
     </section>
 
     <section class="relative bg-gray-50 py-10 pb-16 px-6 overflow-hidden" dir="rtl">
-        <x-landing.section-header>
-            <x-slot name="label">تابعنا الآن</x-slot>
-            كل جديد عندنا… تابعنا وكن جزءًا
-            <span class="text-primary-soft">من مجتمعنا.</span>
-        </x-landing.section-header>
-        <div class="flex flex-wrap justify-center items-center gap-5">
+        <div class="container">
+            <x-landing.section-header>
+                <x-slot name="label">تابعنا الآن</x-slot>
+                كل جديد عندنا… تابعنا وكن جزءًا
+                <span class="text-primary-soft">من مجتمعنا.</span>
+            </x-landing.section-header>
+            <div class="flex flex-wrap justify-center items-center gap-5">
 
-            <x-landing.post-card image="assets/landing/posts/post-3.png" likes="16" shares="43" comments="500"
-                saves="7,888" />
-            <x-landing.post-card image="assets/landing/posts/post-2.png" llikes="16" shares="43" comments="500"
-                saves="7,888" />
-            <x-landing.post-card image="assets/landing/posts/post-1.png" likes="16" shares="43" comments="500"
-                saves="7,888" />
+                <x-landing.post-card image="assets/landing/posts/post-3.png" likes="16" shares="43"
+                    comments="500" saves="7,888" />
+                <x-landing.post-card image="assets/landing/posts/post-2.png" llikes="16" shares="43"
+                    comments="500" saves="7,888" />
+                <x-landing.post-card image="assets/landing/posts/post-1.png" likes="16" shares="43"
+                    comments="500" saves="7,888" />
+            </div>
         </div>
 
     </section>
 
     <section id='clients' class="relative bg-gray-50 py-10 pb-16 px-6 overflow-hidden" dir="rtl">
-        <x-landing.section-header>
-            <x-slot name="label">عملائنا</x-slot>
-            كن ضمن أكثر من 100 + شريك معنا, يثقون بأن النجاح
-            <span class="text-primary-soft">يبدأ بثقة و نتائج.</span>
-        </x-landing.section-header>
-        <div class="flex flex-wrap justify-center items-center gap-x-[25px] gap-y-[30px] max-w-[1200px] mx-auto">
-            @foreach ($partners as $icon)
-                <x-landing.partner-card svg="assets/landing/partners/{{ $icon }}" />
-            @endforeach
+        <div class="container">
+            <x-landing.section-header>
+                <x-slot name="label">عملائنا</x-slot>
+                كن ضمن أكثر من 100 + شريك معنا, يثقون بأن النجاح
+                <span class="text-primary-soft">يبدأ بثقة و نتائج.</span>
+            </x-landing.section-header>
+            <div class="flex flex-wrap justify-center items-center gap-x-[25px] gap-y-[30px] max-w-[1200px] mx-auto">
+                @foreach ($partners as $icon)
+                    <x-landing.partner-card svg="assets/landing/partners/{{ $icon }}" />
+                @endforeach
+            </div>
+            <img src='./assets/landing/group.png' class='absolute right-0 bottom-0 ' />
         </div>
-        <img src='./assets/landing/group.png' class='absolute right-0 bottom-0 ' />
     </section>
 
 
-    <section id='questions' class="relative py-10 pb-16 px-6 overflow-hidden" dir="rtl">
+    <section id='questions' class="container relative py-10 pb-16 px-6 overflow-hidden" dir="rtl">
         <x-landing.section-header>
             <x-slot name="label">الأسئلة الشائعة</x-slot>
             قبل ما تبدأ... جمعنالك أهم
@@ -528,101 +769,164 @@
             <!-- Menu Items - Stack vertically on mobile, horizontal on desktop -->
             <div
                 class='flex flex-row lg:flex-col w-full lg:w-[170px] gap-2 lg:gap-[14px] overflow-x-auto lg:overflow-x-visible pb-4 lg:pb-0'>
-                @foreach ($menuItems as $item)
-                    <x-landing.menu-item :label="$item['label']" :disabled="$item['disabled']" :active="!$item['disabled'] && $loop->first" />
+                @foreach ($faqCategories as $key => $item)
+                    <x-landing.menu-item :label="$item['title']" :id="$item['id']" />
                 @endforeach
             </div>
 
             <!-- FAQ Items - Full width on mobile -->
-            <div class='flex flex-col gap-4 lg:gap-[23px] w-full lg:w-[748px]'>
-                @foreach ($faqs as $faq)
-                    <x-landing.qes-item :number="$faq['number']" :question="$faq['question']" :answer="$faq['answer']" :isOpen="$faq['isOpen']" />
+            <div class="flex-1 flex flex-col gap-4 lg:gap-[23px]">
+                @foreach ($faqCategories as $key => $cat)
+                    <div id='{{ $cat['id'] }}' class="ques-main flex flex-col gap-4 lg:gap-[23px]">
+                        @foreach ($cat['questions'] as $faq)
+                            <x-landing.qes-item :number="$faq['number']" :question="$faq['question']" :answer="$faq['answer']" />
+                        @endforeach
+                    </div>
                 @endforeach
             </div>
         </div>
     </section>
 
 
-    <footer id='contact' class=" border-t-[5px] border-t-primary-soft rotate-0 opacity-100">
-        <div
-            class="mx-auto px-6  mt-[100px] mb-[57px]
-           flex flex-col md:flex-row
-           md:justify-between md:space-x-8 space-y-12 md:space-y-0">
-            <!-- Contact Form -->
-            <!-- Contact Form -->
-            <div class="md:w-1/3">
-                <h3 class="text-[20px] font-semibold mb-4">تواصل معنا</h3>
+    <footer id='contact' class="border-t-[5px] border-t-primary-soft rotate-0 opacity-100">
+        <div class='container'>
+            <div
+                class="mx-auto px-6  mt-[100px] mb-[57px] flex flex-col lg:flex-row lg:justify-between gap-8  space-y-5 lg:space-y-0">
+                <!-- Contact Form -->
+                <!-- Contact Form -->
+                <div class="lg:w-[320px]">
+                    <h3 class="text-[20px] font-semibold mb-4">تواصل معنا</h3>
 
-                <form
-                    class="p-[10px]
-           flex flex-wrap sm:flex-nowrap   {{-- wrap on xs, no-wrap from sm and up --}}
-           items-center gap-2
-           bg-[#0C3C52] rounded-[10px]">
-                    <button type="submit"
-                        class="hover:bg-primary-softDark transition-colors bg-primary-soft px-8 py-2 rounded-[10px] flex-shrink-0">
-                        إرسال
-                    </button>
+                    <form class="p-[10px] flex flex-wrap sm:flex-nowrap items-center gap-2 bg-[#0C3C52] rounded-[10px]">
+                        <button type="submit"
+                            class="hover:bg-primary-softDark transition-colors bg-primary-soft px-8 py-2 rounded-[10px] flex-shrink-0">
+                            إرسال
+                        </button>
 
-                    <div class="flex items-center flex-1 min-w-0">
-                        <input type="email" placeholder="name@domain.com"
-                            class="w-full
-               px-4 py-2
-               bg-[#0C3C52] text-white
-               outline-none focus:ring-0 border-none
-               min-w-0"
-                            {{-- allows the input to shrink below its content width --}} />
+                        <div class="flex items-center flex-1 min-w-0">
+                            <input type="email" placeholder="name@domain.com"
+                                class="w-full px-4 py-2 bg-[#0C3C52] text-white outline-none focus:ring-0 border-none min-w-40"
+                                {{-- allows the input to shrink below its content width --}} />
 
-                        <img src="assets/icons/email.svg" class="w-6 h-6 ml-2 flex-shrink-0" alt="Email Icon" />
+                            <img src="assets/icons/email.svg" class="w-6 h-6 ml-2 flex-shrink-0" alt="Email Icon" />
+                        </div>
+                    </form>
+                </div>
+
+
+                <!-- Important Links -->
+                <div class="lg:min-w-[300px] grid grid-cols-2 gap-8 ">
+                    <x-landing.footer-links :title="$footerLinks['important']['title']" :links="$footerLinks['important']['links']" />
+
+                    <x-landing.footer-links :title="$footerLinks['main']['title']" :links="$footerLinks['main']['links']" />
+                </div>
+
+                <!-- Logo, Description & Social Icons -->
+                <div dir="rtl" class="lg:min-w-[220px]">
+                    <img src="./assets/logo.png" alt="LOGIK COD" class="w-[90px] h-[50px]" />
+
+                    <p class="mt-4 text-base leading-relaxed">
+                        منصة لوجيستية متكاملة لتدبير التخزين، التجهيز والشحن من مكان واحد.
+                    </p>
+
+                    <div class="mt-6 flex gap-[15px]">
+                        <!-- Facebook -->
+                        <a href="#" class="hover:text-blue-500">
+                            <img src='assets/icons/socials/facebook.svg' class='bg-white rounded-full p-[10px]' />
+                        </a>
+
+                        <!-- Twitter -->
+                        <a href="#" class="hover:text-blue-500">
+                            <img src='assets/icons/socials/twitter.svg' class='bg-white rounded-full p-[10px]' />
+                        </a>
+
+                        <!-- Instagram -->
+                        <a href="#" class="hover:text-blue-500">
+                            <img src='assets/icons/socials/instagram.svg' class='bg-white rounded-full p-[10px]' />
+                        </a>
+
+                        <!-- YouTube -->
+                        <a href="#" class="hover:text-blue-500">
+                            <img src='assets/icons/socials/youtube.svg' class='bg-white rounded-full p-[10px]' />
+                        </a>
+
                     </div>
-                </form>
-            </div>
-
-
-            <!-- Important Links -->
-            <div class="md:w-1/3 grid grid-cols-2 gap-8">
-                <x-landing.footer-links :title="$footerLinks['important']['title']" :links="$footerLinks['important']['links']" />
-
-                <x-landing.footer-links :title="$footerLinks['main']['title']" :links="$footerLinks['main']['links']" />
-            </div>
-
-            <!-- Logo, Description & Social Icons -->
-            <div dir="rtl" class="md:w-1/3">
-                <img src="./assets/logo.png" alt="LOGIK COD" class="w-[90px] h-[50px]" />
-
-                <p class="mt-4 text-base leading-relaxed">
-                    منصة لوجيستية متكاملة لتدبير التخزين، التجهيز والشحن من مكان واحد.
-                </p>
-
-                <div class="mt-6 flex gap-[15px]">
-                    <!-- Facebook -->
-                    <a href="#" class="hover:text-blue-500">
-                        <img src='assets/icons/socials/facebook.svg' class='bg-white rounded-full p-[10px]' />
-                    </a>
-
-                    <!-- Twitter -->
-                    <a href="#" class="hover:text-blue-500">
-                        <img src='assets/icons/socials/twitter.svg' class='bg-white rounded-full p-[10px]' />
-                    </a>
-
-                    <!-- Instagram -->
-                    <a href="#" class="hover:text-blue-500">
-                        <img src='assets/icons/socials/instagram.svg' class='bg-white rounded-full p-[10px]' />
-                    </a>
-
-                    <!-- YouTube -->
-                    <a href="#" class="hover:text-blue-500">
-                        <img src='assets/icons/socials/youtube.svg' class='bg-white rounded-full p-[10px]' />
-                    </a>
-
                 </div>
             </div>
-        </div>
 
-        <div class=" text-center py-4 text-xs mt-[70px]">
-            جميع الحقوق محفوظة © 2025
+            <div class=" text-center py-4 text-xs mt-[70px]">
+                جميع الحقوق محفوظة © 2025
+            </div>
         </div>
     </footer>
     @push('scripts')
         <script></script>
     @endpush
 @endsection
+
+
+@push('scripts')
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const header = document.getElementById('header');
+            const navLinks = document.querySelectorAll('.nav-link');
+            const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const hamburger = document.querySelector('.hamburger');
+
+            // Mobile menu toggle
+            mobileMenuButton.addEventListener('click', function() {
+                mobileMenu.classList.toggle('open');
+                hamburger.classList.toggle('open');
+            });
+
+            // Close mobile menu when clicking a link
+            mobileNavLinks.forEach(link => {
+                link.addEventListener('click', function() {
+                    if (window.innerWidth <= 900) {
+                        mobileMenu.classList.remove('open');
+                        hamburger.classList.remove('open');
+                    }
+                });
+            });
+
+            function updateActiveLink() {
+                const scrollPosition = window.scrollY + 150;
+
+                document.querySelectorAll('section').forEach(section => {
+                    const sectionTop = section.offsetTop;
+                    const sectionHeight = section.offsetHeight;
+                    const sectionId = section.getAttribute('id');
+                    if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+                        // Remove active class from all links
+                        navLinks.forEach(link => {
+                            link.classList.remove('active');
+                        });
+
+                        // Add active class to corresponding link
+                        const activeLink = document.querySelector(`.nav-link[href="#${sectionId}"]`);
+                        if (activeLink) {
+                            activeLink.classList.add('active');
+                        }
+                    }
+                });
+            }
+
+            function handleScroll() {
+                if (window.scrollY > 100) {
+                    header.style.backdropFilter = 'blur(4px)';
+                    header.style.backgroundColor = 'rgba(0, 0, 0, 0.3)';
+                    header.style.transition = 'all 0.1s ease';
+                } else {
+                    header.style.backdropFilter = 'none';
+                    header.style.backgroundColor = 'transparent';
+                }
+            }
+            window.addEventListener('scroll', () => {
+                handleScroll()
+                updateActiveLink()
+            });
+        });
+    </script>
+@endpush

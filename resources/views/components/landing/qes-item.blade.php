@@ -2,11 +2,10 @@
         'number', // integer
         'question', // string (Arabic)
         'answer', // string (Arabic)
-        'isOpen' => false, // boolean
     ])
 
     <div
-        class="w-full lg:w-[748px]
+        class="ques w-full lg:w-[748px]
          bg-[#F9F9F9]
          border-[0.8px] border-[#ECECEC]
          rounded-[8px]
@@ -14,12 +13,7 @@
          relative
          p-4 lg:p-[20px]">
         {{-- Right dashed line - Hidden on mobile --}}
-        <div
-            class="hidden lg:block absolute
-           top-[23px] left-[746px]
-           w-[60px] h-[3px]
-           border-l-[1px] border-dashed border-[#ECECEC]
-           rounded-[5px]">
+        <div class="answer absolute top-[23px] right-0 h-[60px] w-[4px] bg-primary-soft rounded-[5px] z-[1]">
         </div>
 
         {{-- Header: number, question, toggle icon --}}
@@ -39,34 +33,57 @@
                 </p>
             </div>
 
-            <div class="flex-shrink-0 ml-2 lg:ml-0">
-                @if ($isOpen)
-                    <img src='assets/icons/minus.svg' class="w-4 h-4 lg:w-auto lg:h-auto cursor-pointer" />
-                @else
-                    <img src='assets/icons/plus.svg' class="w-4 h-4 lg:w-auto lg:h-auto cursor-pointer" />
-                @endif
-            </div>
+            <button class="toggle flex-shrink-0 ml-2 lg:ml-0 w-5 h-5">
+                <img src='assets/icons/minus.svg' class="minus w-4 h-4 lg:w-auto lg:h-auto cursor-pointer" />
+                <img src='assets/icons/plus.svg' class="plus w-4 h-4 lg:w-auto lg:h-auto cursor-pointer" />
+            </button>
         </div>
 
-        {{-- Answer (only when open) --}}
-        @if ($isOpen)
-            <div class="mt-3 lg:mt-4">
-                <p
-                    class="
-               font-[300] text-[16px] lg:text-[18px]
-               leading-[140%] lg:leading-[100%]
-               text-right
-               text-[#95999BD9]
-               p-1 lg:p-2">
-                    {{ $answer }}
-                </p>
-            </div>
-        @endif
+        <div id="answer" class="answer">
+            <p class="text-right text-[13px] text-[#95999BD9] p-1 lg:p-2 font-[300]">
+                {{ $answer }}
+            </p>
+        </div>
     </div>
 
     @once
         @push('styles')
             <style>
+                .ques .minus {
+                    display: none;
+                }
+
+                .ques .plus {
+                    display: block;
+                }
+
+                .ques.open .minus {
+                    display: block;
+                }
+
+                .ques.open .plus {
+                    display: none;
+                }
+
+
+                /* Default (hidden) state */
+                .ques .answer {
+                    max-height: 0;
+                    overflow: hidden;
+                    opacity: 0;
+                    visibility: hidden;
+                    transition: all 0.3s ease;
+                }
+
+                /* When open class is present on .ques */
+                .ques.open .answer {
+                    max-height: 200px;
+                    /* or whatever height fits your content */
+                    opacity: 1;
+                    visibility: visible;
+                }
+
+
                 .number-circle {
                     display: inline-flex;
                     align-items: center;
@@ -93,4 +110,23 @@
                 }
             </style>
         @endpush
+
+
+        @push('scripts')
+            <script>
+                document.addEventListener('DOMContentLoaded', () => {
+                    const toggleButtons = document.querySelectorAll('.toggle');
+
+                    toggleButtons.forEach(button => {
+                        button.addEventListener('click', () => {
+                            const currentQues = button.closest('.ques');
+
+                            // Toggle current
+                            currentQues.classList.toggle('open');
+                        });
+                    });
+                });
+            </script>
+        @endpush
+
     @endonce
