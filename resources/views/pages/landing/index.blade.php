@@ -88,6 +88,30 @@
         'Simplification-7.svg',
     ];
 
+    $posts = [
+        [
+            'video' => 'assets/videos/nature.mp4',
+            'likes' => 16,
+            'shares' => 43,
+            'comments' => 500,
+            'saves' => '7,888',
+        ],
+        [
+            'video' => 'assets/videos/amazing.mp4',
+            'likes' => 16,
+            'shares' => 43,
+            'comments' => 500,
+            'saves' => '7,888',
+        ],
+        [
+            'video' => 'assets/videos/tranquility.mp4',
+            'likes' => 16,
+            'shares' => 43,
+            'comments' => 500,
+            'saves' => '7,888',
+        ],
+    ];
+
     $faqCategories = [
         'general' => [
             'id' => 'general',
@@ -553,7 +577,7 @@
             <div class="relative flex flex-col lg:flex-row gap-[88px] lg:gap-12 items-center">
 
                 <!-- Left Images Section -->
-                <div class="w-[556px] relative flex-row hidden lg:flex gap-[1.3rem]">
+                <div data-aos="fade-up" class="w-[556px] relative flex-row hidden lg:flex gap-[1.3rem]">
                     <!-- Warehouse Image -->
                     <div class="relative w-[275px]">
                         <img src="assets/landing/hero.jpg" alt="مستودع لوجستي"
@@ -593,7 +617,7 @@
 
 
                 <!-- Right Content Section -->
-                <div class="lg:col-span-7 text-right" dir="rtl">
+                <div data-aos="fade-left" class="lg:col-span-7 text-right" dir="rtl">
                     <!-- Header -->
                     <div class="mb-6">
                         <x-landing.section-label>
@@ -666,7 +690,6 @@
         </div>
     </section>
 
-
     <section id='start' class="group-image container relative py-10 pb-16 px-6 overflow-hidden" dir="rtl">
         <div class="max-w-[1203px] mx-auto h-full flex flex-col items-center ">
 
@@ -716,7 +739,7 @@
             <span class="text-primary-soft">أقرب لعملائنا.</span>
         </x-landing.section-header>
 
-        <img src='./assets/landing/world.png' class="mt-12 mx-auto" />
+        <img data-aos="fade-right" src='./assets/landing/world.png' class="mt-12 mx-auto" />
 
 
     </section>
@@ -729,13 +752,10 @@
                 <span class="text-primary-soft">من مجتمعنا.</span>
             </x-landing.section-header>
             <div class="flex flex-wrap justify-center items-center gap-5">
-
-                <x-landing.post-card image="assets/landing/posts/post-3.png" likes="16" shares="43"
-                    comments="500" saves="7,888" />
-                <x-landing.post-card image="assets/landing/posts/post-2.png" llikes="16" shares="43"
-                    comments="500" saves="7,888" />
-                <x-landing.post-card image="assets/landing/posts/post-1.png" likes="16" shares="43"
-                    comments="500" saves="7,888" />
+                @foreach ($posts as $post)
+                    <x-landing.post-card :video="$post['video']" :likes="$post['likes']" :shares="$post['shares']" :comments="$post['comments']"
+                        :saves="$post['saves']" />
+                @endforeach
             </div>
         </div>
 
@@ -756,7 +776,6 @@
             <img src='./assets/landing/group.png' class='absolute right-0 bottom-0 ' />
         </div>
     </section>
-
 
     <section id='questions' class="container relative py-10 pb-16 px-6 overflow-hidden" dir="rtl">
         <x-landing.section-header>
@@ -786,7 +805,6 @@
             </div>
         </div>
     </section>
-
 
     <footer id='contact' class="border-t-[5px] border-t-primary-soft rotate-0 opacity-100">
         <div class='container'>
@@ -881,6 +899,8 @@
                 hamburger.classList.toggle('open');
             });
 
+
+
             // Close mobile menu when clicking a link
             mobileNavLinks.forEach(link => {
                 link.addEventListener('click', function() {
@@ -889,6 +909,18 @@
                         hamburger.classList.remove('open');
                     }
                 });
+            });
+
+            // 3. Close on outside click
+            document.addEventListener('click', event => {
+                const clickedInsideMenu = mobileMenu.contains(event.target);
+                const clickedOnToggleBtn = mobileMenuButton.contains(event.target);
+
+                if (!clickedInsideMenu && !clickedOnToggleBtn &&
+                    mobileMenu.classList.contains('open')) {
+                    mobileMenu.classList.remove('open');
+                    hamburger.classList.remove('open');
+                }
             });
 
             function updateActiveLink() {

@@ -5,19 +5,12 @@
 
     {{-- Login Button --}}
 
+
     <a href="{{ url('/login') }}"
         class="w-[146px] h-[40px] rounded-[33px] cursor-pointer
            text-sm font-medium transition-colors flex-center
            {{ $loginActive ? 'bg-primary-soft hover:bg-primary-softDark text-white' : ' text-[#84B156] hover:bg-gray-100' }}">
-
-        <a href="{{ url('/login') }}"
-            class="w-[146px] h-[40px] rounded-[33px] cursor-pointer
-           text-sm font-medium transition-colors flex-center
-           {{ $loginActive ? 'bg-primary-soft hover:bg-primary-softDark text-white' : ' text-[#84B156] hover:bg-gray-100' }}">
-            تسجيل دخول
-        </a>
-
-
+        تسجيل دخول
     </a>
 
 

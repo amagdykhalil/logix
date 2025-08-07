@@ -4,7 +4,7 @@
         'answer', // string (Arabic)
     ])
 
-    <div
+    <div data-aos="fade-right"
         class="ques w-full lg:w-[748px]
          bg-[#F9F9F9]
          border-[0.8px] border-[#ECECEC]
@@ -121,12 +121,20 @@
                         button.addEventListener('click', () => {
                             const currentQues = button.closest('.ques');
 
-                            // Toggle current
+                            // 1. Close any other open .ques
+                            document.querySelectorAll('.ques.open').forEach(ques => {
+                                if (ques !== currentQues) {
+                                    ques.classList.remove('open');
+                                }
+                            });
+
+                            // 2. Toggle the clicked .ques
                             currentQues.classList.toggle('open');
                         });
                     });
                 });
             </script>
         @endpush
+
 
     @endonce

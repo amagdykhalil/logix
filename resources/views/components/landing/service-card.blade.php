@@ -36,7 +36,7 @@
     @endpush
 @endonce
 
-<div
+<div data-aos="flip-right"
     class="s-card w-[385px] h-[150px] bg-white rounded-lg duration-200 px-4 py-[30px] flex items-start justify-between gap-5 hover:bg-primary-dark group">
     <div class="mt-2">
         <span class="number">{{ $number }}</span>

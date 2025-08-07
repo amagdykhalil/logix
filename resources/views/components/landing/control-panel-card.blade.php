@@ -7,7 +7,7 @@
     'iconpath', // path to the icon file
 ])
 
-<div class="w-[340px] h-[324px] bg-white rounded-lg p-6 pl-16 flex flex-col justify-center gap-6">
+<div data-aos="flip-up" class="w-[340px] h-[324px] bg-white rounded-lg p-6 pl-16 flex flex-col justify-center gap-6">
 
     <!-- Top: number + optional icon slot -->
     <div class="flex justify-end {{ $numberPosition === 'bottom' ? 'items-end' : 'items-start ml-[-11px]' }}">

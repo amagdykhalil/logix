@@ -1,7 +1,7 @@
 {{-- resources/views/components/landing/logix-cod-card.blade.php --}}
-@props(['image', 'likes' => '7,888', 'shares' => '43', 'comments' => '500', 'saves' => '16'])
+@props(['video', 'likes' => '7,888', 'shares' => '43', 'comments' => '500', 'saves' => '16'])
 
-<div
+<div data-aos="zoom-in"
     class="w-full sm:w-[388px]
             bg-white rounded-[15px]
             overflow-hidden flex flex-col items-center
@@ -31,9 +31,11 @@
             </div>
         </div>
 
-        <img src="{{ $image }}" alt="Logix COD Promo"
-            class="w-full h-auto sm:h-[417px]
-                object-cover rounded-[3px]" />
+        <video controls class="w-full h-auto sm:h-[417px] object-fill rounded-[3px]">
+            <source src="{{ $video }}" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+
     </div>
 
     {{-- Metrics --}}

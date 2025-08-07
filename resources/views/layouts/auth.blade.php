@@ -37,7 +37,7 @@
         </div>
 
         {{-- Auth Section --}}
-        <div class=" w-full lg:w-1/2 2xl:w-3/5 min-h-[830px] lg:max-w-[600px] flex flex-col">
+        <div class=" w-full lg:w-1/2 2xl:w-3/5 min-h-[830px] lg:max-w-[600px] flex flex-col mb-6">
             <div class="flex justify-between items-center mt-6 flex-wrap gap-4  mb-[40px]">
                 <button class="lang flex items-center outline-none">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
