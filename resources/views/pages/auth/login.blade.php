@@ -37,3 +37,7 @@
 
 @section('sideContent')
 @endsection
+
+
+@section('sideContent')
+@endsection
