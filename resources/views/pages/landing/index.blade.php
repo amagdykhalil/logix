@@ -431,18 +431,18 @@
 @endpush
 
 @section('content')
-    <section id='home' class="hero-section relative min-h-screen w-full">
+    <section id='home' class="hero-section relative min-h-[970px] w-full">
 
-        <div class='min-h-screen absolute top-0 left-0 w-full'
+        <div class='min-h-[970px] absolute top-0 left-0 w-full'
             style="background: linear-gradient(187.79deg, #141E29 -0.35%, rgba(32, 32, 32, 0) 93.71%);">
         </div>
 
-        <div class='container  relative z-10 min-h-[970px] flex flex-col gap-4'>
+        <div class='container relative z-10 min-h-[970px] flex flex-col gap-4'>
             <div class='flex flex-col gap-8 lg:gap-[66px]'>
                 <!-- Header Navigation -->
-                <header id='header'
-                    class=" w-full fixed z-50 pt-3 pb-3 left-1/2 -translate-x-1/2 max-w-full lg:max-w-[1440px]">
-                    <div class="w-full px-6 flex flex-row-reverse md:flex-row justify-between items-center gap-4 lg:gap-0">
+                <header id='header' class="w-screen fixed z-50 pt-3 pb-3 left-1/2 -translate-x-1/2 ">
+                    <div
+                        class="container w-full px-6 flex flex-row-reverse md:flex-row justify-between items-center gap-4 lg:gap-0">
                         <!-- Logo - First on mobile, last on desktop -->
 
                         <!-- Login Button - Third on mobile, first on desktop -->
@@ -729,7 +729,6 @@
 
         </div>
     </section>
-
 
     <section id='locations' class="container relative py-10 pb-16 px-6 overflow-hidden" dir="rtl">
 

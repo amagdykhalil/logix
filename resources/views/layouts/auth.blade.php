@@ -70,7 +70,7 @@
                 </div>
 
             </div>
-            <div class='max-h-[600px] overflow-y-scroll'>
+            <div class='max-h-[600px] overflow-y-auto'>
 
                 @yield('authContent')
             </div>

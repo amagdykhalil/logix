@@ -16,7 +16,7 @@
     @stack('styles')
 </head>
 
-<body class="!p-0 min-h-screen">
+<body class="!p-0 min-h-screen overflow-x-hidden">
     @yield('content')
     @push('scripts')
         <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
