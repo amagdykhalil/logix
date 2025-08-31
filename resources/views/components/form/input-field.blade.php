@@ -2,7 +2,7 @@
 
 <div class="w-full  ml-auto">
     <label for="{{ $name }}"
-        class="block mb-[7px]
+        class="block mb-4
            text-primary-dark
            text-[12px] font-[Montserrat-Arabic] font-medium
            leading-[160%] tracking-[-2%] text-right">

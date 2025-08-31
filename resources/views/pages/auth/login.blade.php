@@ -18,7 +18,8 @@
                     <x-form.input-field label="البريد الإلكتروني" name="email" type='email' value=""
                         placeholder="yosra@gmail.com" />
 
-                    <a href='' class='block text-left text-[#E9A760] text-sm hover:underline'>نسيت كلمة المرور ؟</a>
+                    <a href="{{ url('/forgot-password') }}"
+                        class='block text-left text-[#E9A760] text-sm hover:underline'>نسيت كلمة المرور ؟</a>
                     <x-form.button class="">
                         تسجيل دخول
                     </x-form.button>
@@ -32,10 +33,6 @@
             </div>
         </div>
     </div>
-@endsection
-
-
-@section('sideContent')
 @endsection
 
 

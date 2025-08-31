@@ -96,3 +96,7 @@ button:disabled {
   pointer-events: none;
   cursor: not-allowed;
 }
+
+.inactive-section {
+  display: none;
+}

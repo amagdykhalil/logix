@@ -1,5 +1,12 @@
 @extends('layouts.app')
 
+@php
+    $sideTitle = $sideTitle ?? 'مرحبًا بعودتك!';
+    $sideDescription =
+        $sideDescription ??
+        'خدمات متكاملة للتجارة الإلكترونية تبدأ من الاستيراد وتنتهي بالتسليم… نحن شريكك للنجاح في الشرق الأوسط.';
+@endphp
+
 @push('styles')
     <style>
         .side {
@@ -19,13 +26,15 @@
         {{-- Side Section --}}
         <div class="hidden lg:block 2xl:w-2/5 w-1/2 min-h-[400px] max-w-[940px] h-full">
             <div class="relative side h-full rounded-3xl">
+                {{-- side block for lg-only --}}
                 <div class="pt-[5.5rem] px-4 sm:px-[4.25rem]">
-                    <h2 class="text-2xl sm:text-3xl font-semibold text-primary-dark mb-5 text-center sm:text-right">مرحبًا
-                        بعودتك!</h2>
+                    <h2
+                        class="auth-side-title text-2xl sm:text-3xl font-semibold text-primary-dark mb-5 text-center sm:text-right">
+                        {{ $sideTitle }}
+                    </h2>
                     <p dir="rtl"
-                        class="text-[13px] leading-6 text-primary-dark max-w-[32rem] ml-auto text-center sm:text-right">
-                        خدمات متكاملة للتجارة الإلكترونية تبدأ من الاستيراد وتنتهي بالتسليم… نحن شريكك للنجاح في الشرق
-                        الأوسط.
+                        class="auth-side-description text-[13px] leading-6 text-primary-dark max-w-[32rem] ml-auto text-center sm:text-right">
+                        {{ $sideDescription }}
                     </p>
 
                     @yield('sideContent')
@@ -54,16 +63,16 @@
                 </a>
             </div>
 
-            <x-auth.auth-toggle :loginActive="Route::currentRouteName() === 'login'" />
+            <x-auth.auth-toggle />
             {{-- side block for sm-only --}}
             <div class="lg:hidden">
                 <div class=" px-4 sm:px-[4.25rem] mb-8">
-                    <h2 class="text-2xl sm:text-3xl font-semibold text-primary-dark mb-5 text-center">
-                        مرحبًا بعودتك!
+                    <h2 class="auth-side-title text-2xl sm:text-3xl font-semibold text-primary-dark mb-5 text-center">
+                        {{ $sideTitle }}
                     </h2>
-                    <p dir="rtl" class="text-[13px] leading-6 text-primary-dark max-w-[32rem] mx-auto text-center ">
-                        خدمات متكاملة للتجارة الإلكترونية تبدأ من الاستيراد وتنتهي بالتسليم…
-                        نحن شريكك للنجاح في الشرق الأوسط.
+                    <p dir="rtl"
+                        class="auth-side-description  text-[13px] leading-6 text-primary-dark max-w-[32rem] mx-auto text-center ">
+                        {{ $sideDescription }}
                     </p>
 
                     @yield('sideContent')

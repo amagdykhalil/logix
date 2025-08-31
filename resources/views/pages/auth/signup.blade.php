@@ -41,53 +41,43 @@
             border-width: 0 2px 2px 0;
             transform: rotate(45deg);
         }
-    </style>
-    <style>
-        input.styled-checkbox {
-            width: 20px;
-            height: 20px;
-            appearance: none;
-            -webkit-appearance: none;
-            -moz-appearance: none;
-            background-color: #fff;
-            border: 1px solid #84B156;
-            border-radius: 4px;
-            cursor: pointer;
-            position: relative;
-            margin-top: 3px;
-            flex-shrink: 0;
 
+        .step-dot {
+            width: 118px;
+            height: 7px;
+            border-radius: 0.375rem;
+            /* Equivalent to Tailwind's rounded-md */
+            transition: background-color 0.3s ease;
         }
 
-        input.styled-checkbox:checked,
-        input.styled-checkbox:checked:hover,
-        input.styled-checkbox:checked:focus {
-            background-color: #84B156;
-            border-color: #84B156;
+        /* Inactive state */
+        .inactive-dot {
+            background-color: rgba(203, 200, 200, 0.32);
+            /* #cbc8c852 */
         }
 
+        /* Responsive override for lg screens */
+        @media (min-width: 1024px) {
+            .inactive-dot {
+                background-color: rgba(255, 255, 255, 0.32);
+                /* #FFFFFF52 */
+            }
+        }
 
-
-        input.styled-checkbox:checked::after {
-            content: "";
-            position: absolute;
-            left: 5px;
-            top: 1px;
-            width: 6px;
-            height: 12px;
-            border: solid white;
-            border-width: 0 2px 2px 0;
-            transform: rotate(45deg);
+        /* Active state */
+        .active-dot {
+            background-color: #1C1C1C;
+            /* Assuming primary-dark is #1C1C1C or replace with your actual value */
         }
     </style>
 @endpush
 
 
 @section('authContent')
-    <div class='login'>
+    <div class='signup'>
         <div class=" mx-auto px-4 min-h-[500px]">
             <form>
-                <div id='step-1' class=" grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-8 ">
+                <div data-step='1' class="step-section grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-8 ">
                     <x-form.input-field label="الاسم الأول" name="first_name" type="text" placeholder="يسرا" />
 
                     <x-form.input-field label="اسم العائلة" name="last_name" type="text" placeholder="علام" />
@@ -117,7 +107,7 @@
                     </div>
                 </div>
 
-                <div id='step-2' class='hidden min-h-[400px] space-y-6'>
+                <div data-step='2' class='step-section inactive-section min-h-[400px] space-y-6'>
                     <x-auth.option-group title="هل لديك خبرة في التجارة الالكترونية" :options="[['text' => 'نعم', 'is_active' => true], ['text' => 'لا', 'is_active' => false]]" />
                     <x-auth.option-group title="عدد سنوات الخبرة" :options="[
                         ['text' => 'لا توجد خبرة', 'is_active' => false],
@@ -142,19 +132,16 @@
 
                 </div>
 
-                <div id="step-3" class="hidden min-h-[400px] relative">
+                <div data-step='3' class="step-section inactive-section  min-h-[400px] relative">
                     <div class="absolute bottom-0 inset-x-0 mb-9 pb-20 text-lg text-primary-dark text-center">
                         لقد تم انشاء حسابك بنجاح
                     </div>
                 </div>
 
-
-                <x-form.button id="loginRedirectBtn" class="mt-[40px] hidden">
-                    تسجيل الدخول
-                </x-form.button>
-                <x-form.button id="nextStepBtn" class='mt-[40px]'>
+                <x-form.button id="dynamicStepBtn" class="mt-[40px]">
                     استمرار
                 </x-form.button>
+
             </form>
         </div>
     </div>
@@ -163,83 +150,74 @@
 @section('sideContent')
     <div>
         <div id="stepIndicators" class='flex gap-[10px] ml-auto  mt-5 justify-center lg:justify-end'>
-            <div class='step-dot w-[118px] h-[7px] rounded-md bg-[#cbc8c852] lg:bg-[#FFFFFF52] '></div>
-            <div class='step-dot w-[118px] h-[7px] rounded-md bg-[#cbc8c852] lg:bg-[#FFFFFF52]'></div>
-            <div class='step-dot w-[118px] h-[7px] rounded-md bg-primary-dark'></div>
+            <div data-step='3' step- class='step-dot inactive-dot'></div>
+            <div data-step='2' class='step-dot inactive-dot'></div>
+            <div data-step='1' class='step-dot active-dot'></div>
         </div>
     </div>
 @endsection
 
 @push('scripts')
     <script>
-        let currentStep = 1;
-        const maxStep = 3;
+        document.addEventListener('DOMContentLoaded', function() {
+            let currentStep = 1;
+            const maxStep = 3;
 
-        const stepSections = {
-            1: document.getElementById('step-1'),
-            2: document.getElementById('step-2'), // in case you add it later
-            3: document.getElementById('step-3'), // note: multiple divs use id="step-3"
-        };
+            const stepSections = document.querySelectorAll('.step-section');
 
-        const nextBtn = document.getElementById('nextStepBtn');
-        const loginBtn = document.getElementById('loginRedirectBtn');
-        const stepDots = document.querySelectorAll('#stepIndicators .step-dot');
-        const checkbox = document.getElementById("terms");
+            const dynamicBtn = document.getElementById('dynamicStepBtn');
+            const stepDots = document.querySelectorAll('#stepIndicators .step-dot');
 
-        const toggleButton = () => {
-            nextStepBtn.disabled = !checkbox.checked;
-        };
+            const checkbox = document.getElementById("terms");
 
-        // Initial check
-        toggleButton();
+            const toggleButton = () => {
+                dynamicBtn.disabled = !checkbox.checked;
+            };
 
-        checkbox.addEventListener("change", toggleButton);
+            // Initial check
 
-        function updateStepIndicators(step) {
-            stepDots.forEach((dot, index) => {
-                const reverseIndex = stepDots.length - step;
-                if (index === reverseIndex) {
-                    dot.classList.add('bg-primary-dark');
-                    dot.classList.remove('bg-[#cbc8c852] lg:bg-[#FFFFFF52]');
-                } else {
-                    dot.classList.remove('bg-primary-dark');
-                    dot.classList.add('bg-[#cbc8c852] lg:bg-[#FFFFFF52]');
-                }
-            });
+            checkbox.addEventListener("change", toggleButton);
+            toggleButton();
 
-        }
+            function updateStepIndicators(step) {
+                stepDots.forEach(dot => {
+                    // read the step number off the element
+                    const dotStep = Number(dot.getAttribute('data-step'));
 
-        function showStep(step) {
-            // Hide all step sections
-            Object.values(stepSections).forEach(section => {
-                section?.classList.add('hidden');
-            });
-
-            // Show current step section(s)
-            stepSections[step]?.classList.remove('hidden');
-
-            // Toggle buttons visibility
-            if (step === maxStep) {
-                nextBtn.classList.add('hidden');
-                loginBtn.classList.remove('hidden');
-            } else {
-                nextBtn.classList.remove('hidden');
-                loginBtn.classList.add('hidden');
+                    // if it matches the current step, make it active
+                    const isActive = dotStep === step;
+                    dot.classList.toggle('active-dot', isActive);
+                    dot.classList.toggle('inactive-dot', !isActive);
+                });
             }
 
-            updateStepIndicators(step);
-        }
 
-        nextBtn.addEventListener('click', function(e) {
-            e.preventDefault();
-            if (currentStep < maxStep) {
-                currentStep++;
-                showStep(currentStep);
+            function showStep(step) {
+                stepSections.forEach(section => {
+                    const sectionStep = Number(section.dataset.step);
+                    const isActive = sectionStep === step;
+                    section.classList.toggle('inactive-section', !isActive);
+                });
+
+
+                dynamicBtn.textContent = step === maxStep ? 'تسجيل الدخول' : 'استمرار';
+                dynamicBtn.onclick = step === maxStep ?
+                    (e) => {
+                        e.preventDefault();
+                        window.location.href = "{{ url('/login') }}"
+                    } :
+                    (e) => {
+                        e.preventDefault();
+                        if (currentStep < maxStep) {
+                            currentStep++;
+                            showStep(currentStep);
+                        }
+                    };
+
+                updateStepIndicators(step);
             }
-        });
 
-        loginBtn.addEventListener('click', function() {
-            window.location.href = "{{ url('/login') }}";
+            showStep(currentStep);
         });
     </script>
 @endpush

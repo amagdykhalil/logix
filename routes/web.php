@@ -5,9 +5,6 @@ use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\App;
 use Illuminate\Http\Request;
 
-
-
-
 Route::middleware(['web', \App\Http\Middleware\SetLocale::class])->group(function () {
 
     Route::get('/', function () {
@@ -21,6 +18,10 @@ Route::middleware(['web', \App\Http\Middleware\SetLocale::class])->group(functio
     Route::get('/signup', function () {
         return view('pages.auth.signup');
     })->name('signup');
+
+	Route::get('/forgot-password', function () {
+        return view('pages.auth.forgot-password');
+    })->name('forgot-password');
 
 });
 
