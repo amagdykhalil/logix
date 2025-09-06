@@ -13,7 +13,7 @@
          relative
          p-4 lg:p-[20px]">
         {{-- Right dashed line - Hidden on mobile --}}
-        <div class="answer absolute top-[23px] right-0 h-[60px] w-[4px] bg-primary-soft rounded-[5px] z-[1]">
+        <div class="answer absolute top-[23px] right-0 min-h-[60px] w-[4px] bg-primary-soft rounded-[5px] z-[1]">
         </div>
 
         {{-- Header: number, question, toggle icon --}}
@@ -23,12 +23,7 @@
                     {{ $number }}
                 </span>
                 <p
-                    class="
-               font-normal text-[14px] lg:text-[16px]
-               leading-[120%] lg:leading-[100%]
-               text-right text-primary-dark
-               px-1 lg:px-2
-               truncate lg:truncate-none">
+                    class=" font-normal text-[14px] lg:text-[16px] leading-normal text-right text-primary-dark px-1 lg:px-2 truncate lg:truncate-none">
                     {{ $question }}
                 </p>
             </div>
@@ -40,7 +35,7 @@
         </div>
 
         <div id="answer" class="answer">
-            <p class="text-right text-[13px] text-[#95999BD9] p-1 lg:p-2 font-[300]">
+            <p class="text-right text-[13px] text-[#95999BD9] p-2 font-[300]">
                 {{ $answer }}
             </p>
         </div>
@@ -49,6 +44,20 @@
     @once
         @push('styles')
             <style>
+                @media (max-width: 640px) {
+                    .ques {
+                        width: 100% !important;
+                        padding: 16px !important;
+                        box-sizing: border-box;
+                    }
+
+                    .ques p {
+                        word-break: break-word;
+                        white-space: normal;
+                    }
+                }
+
+
                 .ques .minus {
                     display: none;
                 }

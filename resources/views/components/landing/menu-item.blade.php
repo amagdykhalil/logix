@@ -32,7 +32,7 @@
 @php
     // Base classes for font, sizing, alignment, and default (inactive) appearance
     $base =
-        'ques-item w-full text-[13px] leading-[33px] tracking-[0%] align-middle font-[400] rounded-[8px] text-center bg-[#F8F8F8] text-gray-500 hover:opacity-80 cursor-pointer px-4 py-2';
+        'ques-item w-full min-w-[170px] text-[13px] leading-[33px] tracking-[0%] align-middle font-[400] rounded-[8px] text-center bg-[#F8F8F8] text-gray-500 hover:opacity-80 cursor-pointer px-4 py-2';
 @endphp
 
 <button id="{{ $id }}" type="button" {{ $attributes->merge(['class' => $base]) }}>

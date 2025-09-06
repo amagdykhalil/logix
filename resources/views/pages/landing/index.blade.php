@@ -394,9 +394,9 @@
             font-weight: 500;
         }
 
-        @media (min-width: 810px) {
+        @media (min-width: 768px) {
             .custom-transform {
-                transform: translateY(4rem);
+                transform: translateY(4rem) !important;
             }
         }
 
@@ -407,6 +407,43 @@
             background-size: auto;
             /* or use contain / cover / 200px auto as needed */
         }
+
+        .vector-images::before {
+            content: '';
+            position: absolute;
+            top: 100px;
+            right: 317px;
+            z-index: 5;
+            background-image: url('./assets/icons/controls/vector-1.svg');
+            background-repeat: no-repeat;
+            width: 100px;
+            /* Adjust as needed */
+            height: 100px;
+            display: none;
+        }
+
+        .vector-images::after {
+            content: '';
+            position: absolute;
+            top: 294px;
+            left: 317px;
+            z-index: 5;
+            background-image: url('./assets/icons/controls/vector-2.svg');
+            background-repeat: no-repeat;
+            width: 100px;
+            /* Adjust as needed */
+            height: 100px;
+            display: none;
+        }
+
+        @media (min-width: 1280px) {
+
+            .vector-images::before,
+            .vector-images::after {
+                display: block;
+            }
+        }
+
 
         footer {
             position: relative;
@@ -432,134 +469,141 @@
 
 @section('content')
     <section id='home' class="hero-section relative min-h-[970px] w-full">
-
         <div class='min-h-[970px] absolute top-0 left-0 w-full'
             style="background: linear-gradient(187.79deg, #141E29 -0.35%, rgba(32, 32, 32, 0) 93.71%);">
         </div>
-
-        <div class='container relative z-10 min-h-[970px] flex flex-col gap-4'>
-            <div class='flex flex-col gap-8 lg:gap-[66px]'>
-                <!-- Header Navigation -->
-                <header id='header' class="w-screen fixed z-50 pt-3 pb-3 left-1/2 -translate-x-1/2 ">
-                    <div
-                        class="container w-full px-6 flex flex-row-reverse md:flex-row justify-between items-center gap-4 lg:gap-0">
-                        <!-- Logo - First on mobile, last on desktop -->
-
-                        <!-- Login Button - Third on mobile, first on desktop -->
-                        <a href="{{ url('/login') }}"
-                            class='hover:bg-primary-softDark transition-colors  w-[140px] lg:w-[156px] h-[50px] lg:h-[55px] rounded-[8px] bg-primary-soft py-[5px] px-[15px] hidden md:flex  items-center gap-[10px] outline-none'>
-                            <img src="./assets/icons/login.png" alt="login" class="w-4 h-4 lg:w-5 lg:h-5 ">
-                            <span class='font-[400] text-sm lg:text-base leading-[100%] tracking-[0] text-white '>
-                                تسجيل دخول
-                            </span>
-                        </a>
-                        <!-- Navigation - Second on mobile, second on desktop -->
-                        <nav id='buttons-container'
-                            class="nav w-full sm:w-auto lg:w-[559px] h-auto lg:h-[64px] hidden md:flex  flex-wrap sm:flex-nowrap items-center justify-center gap-4 lg:gap-[30px] opacity-100 rounded-[15px] pt-[16px] pr-[15px] lg:pr-[25px] pb-[15px] pl-[15px] lg:pl-[25px] border border-solid text-[#FCFCFC24]">
-                            <a href="#contact" class='nav-link text-[14px] lg:text-base cursor-pointer'>تواصل
-                                معانا</a>
-                            <a href="#questions" class='nav-link text-[14px] lg:text-base cursor-pointer'>الاسئلة
-                                الشائعة</a>
-                            <a href="#services" class='nav-link text-[14px] lg:text-base cursor-pointer'>الخدمات</a>
-                            <a href="#about" class='nav-link text-[14px] lg:text-base cursor-pointer'>من
-                                نحن</a>
-                            <a href="#home" class='nav-link active cursor-pointer text-[14px] lg:text-base'>الرئيسية</a>
-                        </nav>
-
-                        <img src='./assets/logo.png' class='w-[70px] h-[40px] lg:w-[89px] lg:h-[51px]' />
+        <div class='relative min-h-[970px] w-full max-w-[1920px] mx-auto flex flex-col '>
 
 
-                        <button class="p-2  flex md:hidden" id="mobile-menu-button">
-                            <div class="hamburger w-6 flex flex-col justify-between h-5">
-                                <span class="block w-full h-0.5 bg-gray-300 rounded"></span>
-                                <span class="block w-full h-0.5 bg-gray-300 rounded"></span>
-                                <span class="block w-full h-0.5 bg-gray-300 rounded"></span>
+            <div class='container relative z-10 flex flex-col gap-4 mb-4'>
+                <div class='flex flex-col gap-8 lg:gap-[66px]'>
+                    <!-- Header Navigation -->
+                    <header id='header' class="w-screen fixed z-50 pt-3 pb-3 left-1/2 -translate-x-1/2 ">
+                        <div
+                            class="container w-full px-6 flex flex-row-reverse md:flex-row justify-between items-center gap-4 lg:gap-0">
+                            <!-- Logo - First on mobile, last on desktop -->
+
+                            <!-- Login Button - Third on mobile, first on desktop -->
+                            <a href="{{ url('/login') }}"
+                                class='hover:bg-primary-softDark transition-colors  w-[140px] lg:w-[156px] h-[50px] lg:h-[55px] rounded-[8px] bg-primary-soft py-[5px] px-[15px] hidden md:flex  items-center gap-[10px] outline-none'>
+                                <img src="./assets/icons/login.png" alt="login" class="w-4 h-4 lg:w-5 lg:h-5 ">
+                                <span class='font-[400] text-sm lg:text-base leading-[100%] tracking-[0] text-white '>
+                                    تسجيل دخول
+                                </span>
+                            </a>
+                            <!-- Navigation - Second on mobile, second on desktop -->
+                            <nav id='buttons-container'
+                                class="nav w-full sm:w-auto lg:w-[559px] h-auto lg:h-[64px] hidden md:flex  flex-wrap sm:flex-nowrap items-center justify-center gap-4 lg:gap-[30px] opacity-100 rounded-[15px] pt-[16px] pr-[15px] lg:pr-[25px] pb-[15px] pl-[15px] lg:pl-[25px] border border-solid text-[#FCFCFC24]">
+                                <a href="#contact" class='nav-link text-[14px] lg:text-base cursor-pointer'>تواصل
+                                    معانا</a>
+                                <a href="#questions" class='nav-link text-[14px] lg:text-base cursor-pointer'>الاسئلة
+                                    الشائعة</a>
+                                <a href="#services" class='nav-link text-[14px] lg:text-base cursor-pointer'>الخدمات</a>
+                                <a href="#about" class='nav-link text-[14px] lg:text-base cursor-pointer'>من
+                                    نحن</a>
+                                <a href="#home"
+                                    class='nav-link active cursor-pointer text-[14px] lg:text-base'>الرئيسية</a>
+                            </nav>
+
+                            <img src='./assets/logo.png' class='w-[70px] h-[40px] lg:w-[89px] lg:h-[51px]' />
+
+
+                            <button class="p-2  flex md:hidden" id="mobile-menu-button">
+                                <div class="hamburger w-6 flex flex-col justify-between h-5">
+                                    <span class="block w-full h-0.5 bg-gray-300 rounded"></span>
+                                    <span class="block w-full h-0.5 bg-gray-300 rounded"></span>
+                                    <span class="block w-full h-0.5 bg-gray-300 rounded"></span>
+                                </div>
+                            </button>
+
+                            <!-- Mobile Menu -->
+                            <div class="mobile-menu w-full absolute left-0 top-full bg-white shadow-lg" id="mobile-menu">
+                                <ul class="flex flex-col text-gray-600 font-medium text-sm rtl">
+                                    <li class="nav-item border-b border-gray-100">
+                                        <a href="#home"
+                                            class="mobile-nav-link block py-4 px-6 text-primary-dark active">الرئيسية</a>
+                                    </li>
+                                    <li class="nav-item border-b border-gray-100">
+                                        <a href="#about" class="mobile-nav-link block py-4 px-6 text-primary-dark">من
+                                            نحن</a>
+                                    </li>
+                                    <li class="nav-item border-b border-gray-100">
+                                        <a href="#services"
+                                            class="mobile-nav-link block py-4 px-6 text-primary-dark">الخدمات</a>
+                                    </li>
+                                    <li class="nav-item border-b border-gray-100">
+                                        <a href="#questions"
+                                            class="mobile-nav-link block py-4 px-6 text-primary-dark">الاسئلة
+                                            الشائعة</a>
+                                    </li>
+                                    <li class="nav-item border-b border-gray-100">
+                                        <a href="#contact" class="mobile-nav-link block py-4 px-6 text-primary-dark">تواصل
+                                            معانا</a>
+                                    </li>
+                                    <li class="nav-item border-b border-gray-100">
+                                        <a href="{{ route('login') }}"
+                                            class="mobile-nav-link block py-4 px-6 hover:text-[#434093]">
+                                            تسجيل دخول</a>
+                                    </li>
+
+                                </ul>
                             </div>
-                        </button>
 
-                        <!-- Mobile Menu -->
-                        <div class="mobile-menu w-full absolute left-0 top-full bg-white shadow-lg" id="mobile-menu">
-                            <ul class="flex flex-col text-gray-600 font-medium text-sm rtl">
-                                <li class="nav-item border-b border-gray-100">
-                                    <a href="#home"
-                                        class="mobile-nav-link block py-4 px-6 text-primary-dark active">الرئيسية</a>
-                                </li>
-                                <li class="nav-item border-b border-gray-100">
-                                    <a href="#about" class="mobile-nav-link block py-4 px-6 text-primary-dark">من نحن</a>
-                                </li>
-                                <li class="nav-item border-b border-gray-100">
-                                    <a href="#services"
-                                        class="mobile-nav-link block py-4 px-6 text-primary-dark">الخدمات</a>
-                                </li>
-                                <li class="nav-item border-b border-gray-100">
-                                    <a href="#questions" class="mobile-nav-link block py-4 px-6 text-primary-dark">الاسئلة
-                                        الشائعة</a>
-                                </li>
-                                <li class="nav-item border-b border-gray-100">
-                                    <a href="#contact" class="mobile-nav-link block py-4 px-6 text-primary-dark">تواصل
-                                        معانا</a>
-                                </li>
-                                <li class="nav-item border-b border-gray-100">
-                                    <a href="{{ route('login') }}"
-                                        class="mobile-nav-link block py-4 px-6 hover:text-[#434093]">
-                                        تسجيل دخول</a>
-                                </li>
-
-                            </ul>
                         </div>
+                    </header>
+                    <!-- Main Content -->
+                    <div class='opacity-100 pt-[185px]'>
+                        <div class='max-w-[1000px] flex gap-6 lg:gap-[35px] flex-col ml-auto'>
+                            <!-- Main Heading -->
+                            <div class='relative h-auto lg:h-[120px] opacity-100 ml-auto'>
+                                <img src="./assets/icons/group.svg"
+                                    class='absolute max-w-[150px] lg:max-w-[300px] top-[-3px] right-[-20px] lg:right-[-40px] hidden lg:block' />
+                                <p dir="rtl"
+                                    class='h-auto lg:h-[120px] pl-[15px] lg:pl-[28px] font-semibold text-2xl sm:text-3xl lg:text-[38px] leading-[1.4] lg:leading-[60px] tracking-[-0.025em] text-right'>
+                                    <span class='text-primary-soft'>خدمات لوجستية</span>
+                                    كاملة بين إيديك… تسهل عليك وتخليك تركز على تجارتك في النمو و النجاح.
+                                </p>
+                                <img src="./assets/landing/curved-line.svg"
+                                    class='absolute max-w-[150px] lg:max-w-[300px] top-[40px] lg:top-[56px] left-[20px] lg:left-[145px] hidden lg:block' />
+                            </div>
 
-                    </div>
-                </header>
-                <!-- Main Content -->
-                <div class='opacity-100 pt-[185px]'>
-                    <div class='max-w-[1000px] flex gap-6 lg:gap-[35px] flex-col ml-auto'>
-                        <!-- Main Heading -->
-                        <div class='relative h-auto lg:h-[120px] opacity-100 ml-auto'>
-                            <img src="./assets/icons/group.svg"
-                                class='absolute max-w-[150px] lg:max-w-[300px] top-[-3px] right-[-20px] lg:right-[-40px] hidden lg:block' />
+                            <!-- Description -->
                             <p dir="rtl"
-                                class='h-auto lg:h-[120px] pl-[15px] lg:pl-[28px] font-semibold text-2xl sm:text-3xl lg:text-[38px] leading-[1.4] lg:leading-[60px] tracking-[-0.025em] text-right'>
-                                <span class='text-primary-soft'>خدمات لوجستية</span>
-                                كاملة بين إيديك… تسهل عليك وتخليك تركز على تجارتك في النمو و النجاح.
+                                class='w-full max-w-[960px] font-[400] text-lg sm:text-xl lg:text-[28px] leading-[1.4] lg:leading-[35px] text-right tracking-normal ml-auto text-[#F2F2F2]'>
+                                سواء كنت صاحب متجر إلكترونية, أو مشروع صغير. نوفر لك مخازن متعددة في دول الخليج و خدمات
+                                لوجستية,
+                                تساعدك تتوسع في مشروعك في دول مختلفة و تدعمك في كل خطوة نحو النجاح.
                             </p>
-                            <img src="./assets/landing/curved-line.svg"
-                                class='absolute max-w-[150px] lg:max-w-[300px] top-[40px] lg:top-[56px] left-[20px] lg:left-[145px] hidden lg:block' />
-                        </div>
-
-                        <!-- Description -->
-                        <p dir="rtl"
-                            class='w-full max-w-[960px] font-[400] text-lg sm:text-xl lg:text-[28px] leading-[1.4] lg:leading-[35px] text-right tracking-normal ml-auto text-[#F2F2F2]'>
-                            سواء كنت صاحب متجر إلكترونية, أو مشروع صغير. نوفر لك مخازن متعددة في دول الخليج و خدمات لوجستية,
-                            تساعدك تتوسع في مشروعك في دول مختلفة و تدعمك في كل خطوة نحو النجاح.
-                        </p>
 
 
-                        <!-- Action Buttons -->
-                        <div class='flex flex-col sm:flex-row gap-4 ml-auto justify-center sm:justify-end mt-8 lg:mt-0'>
-                            <a <a href="{{ url('/signup') }}"
-                                class='hover:bg-gray-200 transition-colors  w-full sm:w-[170px] h-[50px] lg:h-[55px] rounded-[8px] bg-white py-[5px] px-[15px] flex items-center justify-center gap-[10px] outline-none'>
-                                <img src="./assets/icons/send-2.svg" alt="send-2"
-                                    class="w-4 h-4 lg:w-5 lg:h-5 text-primary-dark">
-                                <p class='font-[400] text-sm lg:text-base leading-[100%] tracking-[0] text-primary-dark'>
-                                    ابدأ معانا الآن
-                                </p>
-                            </a>
-                            <a href="#services"
-                                class='hover:bg-primary-softDark transition-colors w-full sm:w-[170px] h-[50px] lg:h-[55px] rounded-[8px] bg-primary-soft py-[5px] px-[15px] flex items-center justify-center gap-[10px] outline-none'>
-                                <img src="./assets/icons/note-2.svg" alt="note-2" class="w-4 h-4 lg:w-5 lg:h-5 ">
-                                <p class='font-[400] text-sm lg:text-base leading-[100%] tracking-[0] text-white '>
-                                    تصفح خدماتنا
-                                </p>
-                            </a>
+                            <!-- Action Buttons -->
+                            <div class='flex flex-row gap-4 sm:ml-auto justify-center sm:justify-end mt-8 lg:mt-0'>
+                                <a <a href="{{ url('/signup') }}"
+                                    class='hover:bg-gray-200 transition-colors  w-full sm:w-[170px] h-[50px] lg:h-[55px] rounded-[8px] bg-white py-[5px] px-[15px] flex items-center justify-center gap-[10px] outline-none'>
+                                    <img src="./assets/icons/send-2.svg" alt="send-2"
+                                        class="w-4 h-4 lg:w-5 lg:h-5 text-primary-dark">
+                                    <p
+                                        class='font-[400] text-sm lg:text-base leading-[100%] tracking-[0] text-primary-dark'>
+                                        ابدأ معانا الآن
+                                    </p>
+                                </a>
+                                <a href="#services"
+                                    class='hover:bg-primary-softDark transition-colors w-full sm:w-[170px] h-[50px] lg:h-[55px] rounded-[8px] bg-primary-soft py-[5px] px-[15px] flex items-center justify-center gap-[10px] outline-none'>
+                                    <img src="./assets/icons/note-2.svg" alt="note-2" class="w-4 h-4 lg:w-5 lg:h-5 ">
+                                    <p class='font-[400] text-sm lg:text-base leading-[100%] tracking-[0] text-white '>
+                                        تصفح خدماتنا
+                                    </p>
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
 
+            </div>
             <!-- Info Cards - Bottom Section -->
-            <div class="relative z-10 flex flex-col flex-1">
+            <div class="relative z-10 flex flex-col flex-1 items-end self-end w-full">
                 <div id='card-hero'
-                    class="mt-auto w-full max-w-[1400px] h-auto lg:h-[250px] flex flex-col lg:flex-row ml-auto rounded-tl-[5px] lg:gap-0">
+                    class="mt-auto w-full max-w-[1400px] h-auto lg:h-[250px] flex flex-col lg:flex-row  rounded-tl-[5px] lg:gap-0">
                     @foreach ($infoCards as $infoCard)
                         <x-landing.info-card title="{{ $infoCard['title'] }}" subtitle="{{ $infoCard['subtitle'] }}"
                             description="{{ $infoCard['description'] }}" :svg="view($infoCard['svg'])->render()" />
@@ -620,14 +664,11 @@
                 <div data-aos="fade-left" class="lg:col-span-7 text-right" dir="rtl">
                     <!-- Header -->
                     <div class="mb-6">
-                        <x-landing.section-label>
-                            من نحن وماذا نقدم
-                        </x-landing.section-label>
-
-                        <h2 class="text-2xl lg:text-3xl font-[500] text-gray-800 leading-tight">
+                        <x-landing.section-header label='من نحن وماذا نقدم' labelClass='lg:self-start'
+                            class='lg:!items-start'>
                             منصة لوجستية متكاملة لإدارة
-                            <span class="text-primary-soft">تجارتك الإلكترونية</span>
-                        </h2>
+                            <span class="text-primary-soft">تجارتك الإلكترونية.</span>
+                        </x-landing.section-header>
                     </div>
 
                     <!-- Description -->
@@ -641,9 +682,9 @@
                     </div>
 
                     <!-- Action Buttons -->
-                    <div class="flex flex-col sm:flex-row gap-4 justify-start mb-8 ">
+                    <div class="flex flex-row gap-4 justify-start mb-8 ">
                         <button
-                            class=' hover:bg-primary-softDark transition-colors w-full sm:w-[170px] h-[55px] rounded-[8px] bg-primary-soft py-[5px] px-[15px] flex items-center justify-center gap-[10px] outline-none'>
+                            class=' hover:bg-primary-softDark transition-colors w-full sm:max-w-[170px] h-[55px] rounded-[8px] bg-primary-soft py-[5px] px-[15px] flex items-center justify-center gap-[10px] outline-none'>
                             <p class='font-[400] text-base leading-[100%] tracking-[0] text-white '>
                                 انضم إلينا
                             </p>
@@ -651,7 +692,7 @@
                         </button>
 
                         <a href='#contact'
-                            class='transition-opacity hover:bg-opacity-80  w-full sm:w-[170px] h-[55px] rounded-[8px] bg-primary-dark py-[5px] px-[15px] flex items-center justify-center gap-[10px] outline-none'>
+                            class='transition-opacity hover:bg-opacity-80  w-full sm:max-w-[170px] h-[55px] rounded-[8px] bg-primary-dark py-[5px] px-[15px] flex items-center justify-center gap-[10px] outline-none'>
                             <p class='font-[400] text-base leading-[100%] tracking-[0] text-white '>
                                 تواصل معنا
                             </p>
@@ -670,7 +711,7 @@
         </div>
     </section>
 
-    <section id="services" class="group-image relative bg-gray-50 py-10 px-6 overflow-hidden" dir="rtl">
+    <section id="services" class="group-image relative bg-gray-50 py-10 md:px-6 overflow-hidden" dir="rtl">
         <div class="container">
             <div class="max-w-[1203px] mx-auto h-full flex flex-col items-center ">
 
@@ -680,7 +721,7 @@
                     <span class="text-primary-soft">للشحن والتتبع.</span>
                 </x-landing.section-header>
 
-                <div class="flex justify-center items-center flex-wrap gap-6 ">
+                <div class="flex flex-wrap justify-center items-stretch sm:items-center gap-4 sm:gap-5 lg:gap-6 mx-auto">
                     @foreach ($services as $service)
                         <x-landing.service-card :title="$service['title']" :description="$service['description']" :number="$service['number']" />
                     @endforeach
@@ -699,31 +740,23 @@
                 <span class="text-primary-soft">حواجز تعطلك.</span>
             </x-landing.section-header>
 
-            <div class="relative flex justify-center items-center flex-wrap gap-8 mt-12">
+            <div
+                class="relative flex justify-center items-stretch md:items-center flex-wrap gap-3 md:gap-8 mt-12 vector-images">
                 <!-- Step 1 - Rightmost -->
                 <x-landing.control-panel-card :number="$features[0]['number']" title="{{ $features[0]['title'] }}"
                     description="{{ $features[0]['description'] }}" :borderColor="$features[0]['borderColor']" :numberPosition="$features[0]['numberPosition']"
                     :iconpath="$features[0]['iconPath']" />
 
-                <img src='./assets/icons/controls/vector-1.svg'
-                    class='hidden xl:block absolute top-[100px] right-[317px] z-[5]' />.
-
                 <!-- Step 2 - Middle (moved down) -->
-                <div class="custom-transform">
-                    <x-landing.control-panel-card :number="$features[1]['number']" title="{{ $features[1]['title'] }}"
-                        description="{{ $features[1]['description'] }}" :borderColor="$features[1]['borderColor']" :numberPosition="$features[1]['numberPosition']"
-                        :iconpath="$features[1]['iconPath']" />
-                </div>
+                <x-landing.control-panel-card :number="$features[1]['number']" title="{{ $features[1]['title'] }}"
+                    description="{{ $features[1]['description'] }}" :borderColor="$features[1]['borderColor']" :numberPosition="$features[1]['numberPosition']" :iconpath="$features[1]['iconPath']"
+                    class='custom-transform' />
 
-                <img src='./assets/icons/controls/vector-2.svg'
-                    class='hidden xl:block absolute top-[294px] left-[317px] z-[5]'' />.
 
                 <!-- Step 3 - Leftmost (moved up and made smaller) -->
-                <div class="transform -translate-y-8 scale-90">
-                    <x-landing.control-panel-card :number="$features[2]['number']" title="{{ $features[2]['title'] }}"
-                        description="{{ $features[2]['description'] }}" :borderColor="$features[2]['borderColor']" :numberPosition="$features[2]['numberPosition']"
-                        :iconpath="$features[2]['iconPath']" />
-                </div>
+                <x-landing.control-panel-card :number="$features[2]['number']" title="{{ $features[2]['title'] }}"
+                    description="{{ $features[2]['description'] }}" :borderColor="$features[2]['borderColor']" :numberPosition="$features[2]['numberPosition']"
+                    :iconpath="$features[2]['iconPath']" class='lg:transform lg:-translate-y-8 lg:scale-90' />
 
             </div>
 
@@ -767,11 +800,13 @@
                 كن ضمن أكثر من 100 + شريك معنا, يثقون بأن النجاح
                 <span class="text-primary-soft">يبدأ بثقة و نتائج.</span>
             </x-landing.section-header>
-            <div class="flex flex-wrap justify-center items-center gap-x-[25px] gap-y-[30px] max-w-[1200px] mx-auto">
+            <div
+                class="flex flex-wrap justify-center items-center gap-x-[16px] sm:gap-x-[20px] lg:gap-x-[25px] gap-y-[20px] sm:gap-y-[25px] lg:gap-y-[30px] max-w-[1200px] mx-auto px-4">
                 @foreach ($partners as $icon)
                     <x-landing.partner-card svg="assets/landing/partners/{{ $icon }}" />
                 @endforeach
             </div>
+
             <img src='./assets/landing/group.png' class='absolute right-0 bottom-0 ' />
         </div>
     </section>
@@ -808,31 +843,33 @@
     <footer id='contact' class="border-t-[5px] border-t-primary-soft rotate-0 opacity-100">
         <div class='container'>
             <div
-                class="mx-auto px-6  mt-[100px] mb-[57px] flex flex-col lg:flex-row lg:justify-between gap-8  space-y-5 lg:space-y-0">
+                class="mx-auto px-6  mt-[50px] md:mt-[80px] lg:mt-[100px] mb-[57px] flex flex-col lg:flex-row lg:justify-between gap-8  space-y-5 lg:space-y-0">
                 <!-- Contact Form -->
                 <!-- Contact Form -->
                 <div class="lg:w-[320px]">
-                    <h3 class="text-[20px] font-semibold mb-4">تواصل معنا</h3>
+                    <h3 class="text-lg md:text-[20px] font-semibold mb-4">تواصل معنا</h3>
 
-                    <form class="p-[10px] flex flex-wrap sm:flex-nowrap items-center gap-2 bg-[#0C3C52] rounded-[10px]">
+                    <form
+                        class="p-2 md:p-[10px] flex flex-wrap sm:flex-nowrap items-center gap-2 bg-[#0C3C52] rounded-[10px]">
                         <button type="submit"
-                            class="hover:bg-primary-softDark transition-colors bg-primary-soft px-8 py-2 rounded-[10px] flex-shrink-0">
+                            class="hover:bg-primary-softDark transition-colors bg-primary-soft px-[1.5rem] md:px-8 py-[0.4rem] md:py-2 rounded-[10px] flex-shrink-0">
                             إرسال
                         </button>
 
                         <div class="flex items-center flex-1 min-w-0">
                             <input type="email" placeholder="name@domain.com"
-                                class="w-full px-4 py-2 bg-[#0C3C52] text-white outline-none focus:ring-0 border-none min-w-40"
+                                class="w-full px-[0.4rem] md:px-4 py[0.2rem] lg:py-2 bg-[#0C3C52] text-white outline-none focus:ring-0 border-none text-sm lg:text-base min-w-20 md:min-w-40"
                                 {{-- allows the input to shrink below its content width --}} />
 
-                            <img src="assets/icons/email.svg" class="w-6 h-6 ml-2 flex-shrink-0" alt="Email Icon" />
+                            <img src="assets/icons/email.svg" class="w-4 h-4 md:w-6 md:h-6 ml-2 flex-shrink-0"
+                                alt="Email Icon" />
                         </div>
                     </form>
                 </div>
 
 
                 <!-- Important Links -->
-                <div class="lg:min-w-[300px] grid grid-cols-2 gap-8 ">
+                <div class="lg:min-w-[300px] grid grid-cols-2 gap-4 md:gap-8 ">
                     <x-landing.footer-links :title="$footerLinks['important']['title']" :links="$footerLinks['important']['links']" />
 
                     <x-landing.footer-links :title="$footerLinks['main']['title']" :links="$footerLinks['main']['links']" />
@@ -840,7 +877,7 @@
 
                 <!-- Logo, Description & Social Icons -->
                 <div dir="rtl" class="lg:min-w-[220px]">
-                    <img src="./assets/logo.png" alt="LOGIK COD" class="w-[90px] h-[50px]" />
+                    <img src="./assets/logo.png" alt="LOGIK COD" class="w-[80px] h-auto md:w-[90px] md:h-[50px]" />
 
                     <p class="mt-4 text-base leading-relaxed">
                         منصة لوجيستية متكاملة لتدبير التخزين، التجهيز والشحن من مكان واحد.
@@ -871,7 +908,7 @@
                 </div>
             </div>
 
-            <div class=" text-center py-4 text-xs mt-[70px]">
+            <div class=" text-center py-4 text-xs mt-10 md:mt-[70px]">
                 جميع الحقوق محفوظة © 2025
             </div>
         </div>

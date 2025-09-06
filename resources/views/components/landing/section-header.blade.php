@@ -2,11 +2,13 @@
     // allow extra classes to be passed in
     'label',
     'slot',
+    'class' => '',
+    'labelClass' => '',
 ])
 
-<div class="max-w-[1203px] mx-auto h-full flex flex-col items-center ">
+<div class="max-w-[1203px] mx-auto h-full flex flex-col items-center {{ $class }}">
     <div class="flex flex-col items-center justify-center px-4 pb-12 sm:px-6">
-        <x-landing.section-label class="text-center">
+        <x-landing.section-label class="text-center {{ $labelClass }}">
             {{ $label }}
         </x-landing.section-label>
         <p dir="rtl"
