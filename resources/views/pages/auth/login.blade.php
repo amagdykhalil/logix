@@ -14,9 +14,9 @@
             <div class='h-[500px]  flex-1'>
                 <form class='text-black space-y-6 '>
                     <x-form.input-field label="البريد الإلكتروني" name="email" type='email' value=""
-                        placeholder="yosra@gmail.com" />
-                    <x-form.input-field label="البريد الإلكتروني" name="email" type='email' value=""
-                        placeholder="yosra@gmail.com" />
+                        placeholder="ادخل بريدك الإلكتروني" />
+                    <x-form.input-field label="كلمة المرور" name="password" type='email' value=""
+                        placeholder="ادخل كلمة المرور" />
 
                     <a href="{{ url('/forgot-password') }}"
                         class='block text-left text-[#E9A760] text-sm hover:underline'>نسيت كلمة المرور ؟</a>

@@ -13,7 +13,8 @@
         <form class=" mx-auto px-4 min-h-[500px] flex flex-col justify-between ">
 
             <div data-step='1' class="step-section">
-                <x-form.input-field label="البريد الالكتروني" name="email" type="email" placeholder="yosra@gmail.com" />
+                <x-form.input-field label="البريد الالكتروني" name="email" type="email"
+                    placeholder="ادخل بريدك الإلكتروني" />
             </div>
             <div data-step='2' class="step-section inactive-section text-black">
                 <div class="text-center space-y-6">
@@ -29,8 +30,10 @@
                 </div>
             </div>
             <div data-step='3' class="step-section inactive-section space-y-6">
-                <x-form.input-field label="كلمة المرور الجديدة" name="password" type="password" />
-                <x-form.input-field label="تأكيد كلمة المرور" name="confirmPassword" type="password" />
+                <x-form.input-field label="كلمة المرور الجديدة" name="password" type="password"
+                    placeholder="انشئ كلمة مرور" />
+                <x-form.input-field label="تأكيد كلمة المرور" name="confirmPassword" type="password"
+                    placeholder="اعد إدخال كلمة المرور" />
             </div>
 
             <x-form.button id="dynamicStepBtn" class="mt-[40px]">

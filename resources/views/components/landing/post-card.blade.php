@@ -10,22 +10,22 @@
     {{-- Top image (blue part) --}}
     <div class="relative w-full sm:w-[345px]">
         <div class="flex justify-between items-center
-                mb-4 sm:mb-[22px]">
+                mb-4 sm:mb-[20px]">
             <button class='flex flex-col gap-[5px]'>
-                <div class='w-3 h-3 rounded-full bg-gray-300'></div>
-                <div class='w-3 h-3 rounded-full bg-gray-300'></div>
-                <div class='w-3 h-3 rounded-full bg-gray-300'></div>
+                <div class='w-2 sm:w-3 h-2 sm:h-3 rounded-full bg-gray-300'></div>
+                <div class='w-2 sm:w-3 h-2 sm:h-3 rounded-full bg-gray-300'></div>
+                <div class='w-2 sm:w-3 h-2 sm:h-3 rounded-full bg-gray-300'></div>
             </button>
 
             <div class="flex justify-end items-center">
                 <p
-                    class="text-lg sm:text-[20px]
+                    class="text-base sm:text-[20px]
                    text-black font-[500]
                    ml-3 sm:ml-[20px]">
                     Logix COD
                 </p>
                 <img src="assets/icons/logo-white.png" alt="Logix Logo"
-                    class="w-10 h-10 sm:w-14 sm:h-14
+                    class="w-8 h-8 sm:w-14 sm:h-14
                     border-2 border-primary-soft
                     rounded-full" />
             </div>

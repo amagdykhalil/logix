@@ -78,19 +78,20 @@
         <div class=" mx-auto px-4 min-h-[500px]">
             <form>
                 <div data-step='1' class="step-section grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-8 ">
-                    <x-form.input-field label="الاسم الأول" name="first_name" type="text" placeholder="يسرا" />
+                    <x-form.input-field label="الاسم الأول" name="first_name" type="text" placeholder="ادخل الاسم الأول" />
 
-                    <x-form.input-field label="اسم العائلة" name="last_name" type="text" placeholder="علام" />
+                    <x-form.input-field label="اسم العائلة" name="last_name" type="text" placeholder="ادخل اسم العائلة" />
 
-                    <x-form.input-field label="رقم الجوال" name="mobile" type="tel" placeholder="01002766554" />
+                    <x-form.input-field label="رقم الجوال" name="mobile" type="tel" placeholder="ادخل رقم الجوال" />
 
                     <x-form.input-field label="البريد الإلكتروني" name="email" type="email"
-                        placeholder="yosra@gmail.com" />
+                        placeholder="ادخل بريدك الإلكتروني" />
 
-                    <x-form.input-field label="كلمة المرور" name="password" type="password" />
 
-                    <x-form.input-field label="تأكيد كلمة المرور" name="password_confirmation" type="password" />
+                    <x-form.input-field label="تأكيد كلمة المرور" name="password_confirmation" type="password"
+                        placeholder="اعد إدخال كلمة المرور" />
 
+                    <x-form.input-field label="كلمة المرور" name="password" type="password" placeholder="انشئ كلمة مرور" />
 
                     <div dir='rtl'
                         class="flex items-start gap-2 text-right text-[13px] leading-6 text-black col-span-1 md:col-span-2">

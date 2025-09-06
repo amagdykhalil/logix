@@ -8,41 +8,82 @@
 @once
     @push('styles')
         <style>
+            /* only outline/stroke styles now; sizing comes from Tailwind */
             .number {
-                display: inline-flex;
-                align-items: center;
-                justify-content: center;
-                width: 25px;
-                height: 38px;
                 color: transparent;
-                /* apply the outline */
                 -webkit-text-stroke: 0.8px #84B156;
                 text-stroke: 0.8px #84B156;
-
-                /* typography */
-                font-family: 'Mooli', sans-serif;
-                font-weight: 400;
-                font-size: 20px;
-                line-height: 38px;
-                text-align: center;
             }
 
             .s-card {
                 border: 1px solid #E9EBEF80;
                 box-shadow: 0px 10px 20px 0px #B1B4B91A;
-
             }
         </style>
     @endpush
 @endonce
 
 <div data-aos="flip-right"
-    class="s-card w-[385px] h-[150px] bg-white rounded-lg duration-200 px-4 py-[30px] flex items-start justify-between gap-5 hover:bg-primary-dark group">
+    class="
+        s-card
+        bg-white
+        rounded-lg
+        duration-200
+        flex items-start justify-between
+        group
+        
+        /* sizing */
+        lg:w-[385px] w-[calc(50%-12.5px)]
+        h-auto md:min-h-[150px]
+        
+        /* padding */
+        px-3 md:px-4
+        py-4 md:py-[30px]
+        
+        /* gap */
+        gap-3 md:gap-5
+        
+        /* hover */
+        hover:bg-primary-dark
+    ">
     <div class="mt-2">
-        <span class="number">{{ $number }}</span>
+        <span
+            class="
+                number
+                inline-flex items-center justify-center
+                w-[20px] md:w-[25px]
+                h-[30px] md:h-[38px]
+                
+                /* typography */
+                font-normal
+                text-[16px] md:text-[20px]
+                leading-[30px] md:leading-[38px]
+                text-center
+            ">
+            {{ $number }}
+        </span>
     </div>
+
     <div>
-        <h3 class="text-lg font-[500] text-gray-800 mb-[10px] group-hover:text-white">{{ $title }}</h3>
-        <p class="text-sm text-[#012839ad] leading-[180%] group-hover:text-primary-grayWhite">{{ $description }}</p>
+        <h3
+            class="
+                text-base md:text-lg
+                font-[500]
+                text-gray-800
+                mb-2 md:mb-[10px]
+                group-hover:text-white
+            ">
+            {{ $title }}
+        </h3>
+
+        <p
+            class="
+                text-xs md:text-sm
+                text-[#012839ad]
+                leading-[180%]
+                group-hover:text-primary-grayWhite
+            ">
+            {{ $description }}
+        </p>
     </div>
 </div>
